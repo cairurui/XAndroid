@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.charry.xandroid"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 自定义 config
+        buildConfigField 'boolean', 'isDEBUG', 'true'
+        buildConfigField 'String', 'BASE_URL', '"http://192.168.7.139:8080"'
+    }
+    buildTypes {
+        release {
+            // 是否启动混淆
+            minifyEnabled false
+            // 是否移除无用资源文件，shrinkResources依赖于minifyEnabled，必须和minifyEnabled一起用
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //添加所有在libs文件夹中的jar
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:$rootProject.ext.androidSupportVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.androidSupportVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportVersion"
+    compile "com.android.support:design:$rootProject.ext.androidSupportVersion"
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.android.gms:play-services-plus:11.8.0'
+    // 测试框架
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:3.3.2'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    // view 的注入
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // 事件总线
+    compile 'org.greenrobot:eventbus:3.1.1'
+    // 网络请求
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    // rx 家族
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    // recyclerview adapter
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    // fragment 优化 To get SwipeBack feature, rely on both fragmentation & fragmentation-swipeback
+    compile 'me.yokeyword:fragmentation:1.2.5'
+    compile 'me.yokeyword:fragmentation-swipeback:1.2.5'
+    // 动态权限
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+
+    // 图片加载
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+
+    // ui 调试工具
+    compile 'com.facebook.stetho:stetho:1.5.0'
+
+}

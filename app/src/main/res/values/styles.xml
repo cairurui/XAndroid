@@ -1,0 +1,41 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.Splash">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@drawable/welcome_default</item>
+    </style>
+
+    <style name="PopWindowStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/grey</item>
+    </style>
+
+
+    <style name="ToolBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
+        <item name="android:layout_height">45dp</item>
+        <item name="android:minHeight">45dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/PopWindowStyle</item>
+    </style>
+
+
+</resources>
