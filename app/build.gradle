@@ -12,7 +12,7 @@ android {
 
         // 自定义 config
         buildConfigField 'boolean', 'isDEBUG', 'true'
-        buildConfigField 'String', 'BASE_URL', '"http://192.168.7.139:8080"'
+        buildConfigField 'String', 'BASE_URL', '"http://www.wanandroid.com"'
     }
     buildTypes {
         release {

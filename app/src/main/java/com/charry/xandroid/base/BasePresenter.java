@@ -10,7 +10,7 @@ import java.lang.reflect.Proxy;
  * Created by xiaocai on 2018/1/22.
  */
 
-public class BasePresenter<V extends IView, M extends IModel> implements IPresenter<V> {
+public class BasePresenter<V extends IView, M extends BaseModel> implements IPresenter<V> {
 
     // 一个是原始的 View ，一个是代理的 View
     private WeakReference<V> mView = null;
