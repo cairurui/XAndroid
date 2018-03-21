@@ -18,8 +18,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.learningmvp.TestActivity" />
         <activity
-            android:name=".ui.home.MainActivity"
-            android:theme="@style/AppTheme.Splash"></activity>
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.Learningfragment.LearningFragmentActivity" />
         <activity android:name=".ui.learningmvp.LearningMVPActivity" />
         <activity android:name=".ui.useprogresslayout.UseProgressLayoutActivity" />
@@ -29,11 +35,6 @@
         <activity android:name=".ui.learningWebview.learningWebviewActivity" />
         <activity android:name=".ui.learningHeart.learningHeartActivity" />
         <activity android:name=".ui.signInUp.SignInActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.signInUp.SignUpActivity"></activity>
     </application>

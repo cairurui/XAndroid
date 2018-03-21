@@ -1,4 +1,4 @@
-package com.charry.xandroid.ui.home;
+package com.charry.xandroid;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

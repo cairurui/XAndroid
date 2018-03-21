@@ -24,7 +24,6 @@ public class MyApplication extends Application implements Application.ActivityLi
         Stetho.initializeWithDefaults(this);
 
         registerActivityLifecycleCallbacks(this);
-
     }
 
     public static MyApplication getmApplication() {

@@ -20,5 +20,9 @@ public class UIUtil {
        return MyApplication.getmApplication().getResources().getColor(R.color.possible_result_points);
     }
 
+    public static MyApplication getApp(){
+        return MyApplication.getmApplication();
+    }
+
 
 }

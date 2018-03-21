@@ -19,6 +19,8 @@ public class HomeFragmentAdapter extends BaseQuickAdapter<HomeItemEntity, BaseVi
 
     private int[] colors = {R.color.color_ff33b5e5, R.color.color_ff33b5e5};
 
+
+
     @Override
     protected void convert(BaseViewHolder helper, HomeItemEntity item) {
         helper.setText(R.id.tv_name, item.name);

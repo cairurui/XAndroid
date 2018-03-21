@@ -71,7 +71,7 @@ public class ApiClient {
 
         if (BuildConfig.isDEBUG) {
             // Log信息拦截器
-            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(logger);
+            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             //设置 Debug Log 模式
             builder.addInterceptor(loggingInterceptor);

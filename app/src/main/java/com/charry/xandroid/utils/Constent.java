@@ -10,5 +10,6 @@ import com.charry.xandroid.BuildConfig;
 public class Constent {
 
     public static final String BASE_URL = BuildConfig.BASE_URL;
+    public static final String USER_INFO = "user_info";
 
 }
