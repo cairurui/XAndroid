@@ -67,6 +67,7 @@ public class Xlog {
             } else {
                 Log.d(tag, "Xlog:├ " + builder.toString());
             }
+
         }
     }
 
