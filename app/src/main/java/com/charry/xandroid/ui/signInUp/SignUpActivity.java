@@ -8,13 +8,11 @@ import android.widget.EditText;
 
 import com.charry.xandroid.R;
 import com.charry.xandroid.base.BaseActivity;
-import com.charry.xandroid.base.BasePresenter;
 import com.charry.xandroid.ui.signInUp.model.SignUpBean;
 import com.charry.xandroid.ui.signInUp.presenter.SignUpPresenter;
 import com.charry.xandroid.ui.signInUp.view.SignUpView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SignUpActivity extends BaseActivity<SignUpPresenter> implements SignUpView {

@@ -13,7 +13,4 @@ public interface SignUpView extends IView {
 
     void signUpSuc(SignUpBean.DataBean bean);
 
-
-
-
 }

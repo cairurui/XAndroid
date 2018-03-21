@@ -74,4 +74,5 @@ dependencies {
     // 仿魅族BannerView
     compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
 
+
 }
