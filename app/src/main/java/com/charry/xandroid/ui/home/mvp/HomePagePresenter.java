@@ -1,9 +1,8 @@
-package com.charry.xandroid.ui.home;
+package com.charry.xandroid.ui.home.mvp;
 
 import com.charry.xandroid.base.BasePresenter;
 import com.charry.xandroid.ui.home.entity.BannerBean;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;

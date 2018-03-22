@@ -1,4 +1,4 @@
-package com.charry.xandroid.ui.home;
+package com.charry.xandroid.ui.home.mvp;
 
 import com.charry.xandroid.base.IView;
 import com.charry.xandroid.ui.home.entity.BannerBean;
