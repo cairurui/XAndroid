@@ -34,9 +34,9 @@
         <activity android:name=".ui.learningConstraintLayout.LearningConstraintLayoutActivity" />
         <activity android:name=".ui.learningWebview.learningWebviewActivity" />
         <activity android:name=".ui.learningHeart.learningHeartActivity" />
-        <activity android:name=".ui.signInUp.SignInActivity">
-        </activity>
-        <activity android:name=".ui.signInUp.SignUpActivity"></activity>
+        <activity android:name=".ui.signInUp.SignInActivity"></activity>
+        <activity android:name=".ui.signInUp.SignUpActivity" />
+        <activity android:name=".ui.learningHandler.LearningHandlerActivity"></activity>
     </application>
 
 </manifest>
