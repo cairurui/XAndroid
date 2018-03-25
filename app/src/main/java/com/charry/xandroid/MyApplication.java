@@ -70,36 +70,36 @@ public class MyApplication extends Application implements Application.ActivityLi
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        Xlog.d("onActivityCreated " + activity.getComponentName());
+//        Xlog.d("onActivityCreated " + activity.getComponentName());
     }
 
     @Override
     public void onActivityStarted(Activity activity) {
-        Xlog.d("onActivityStarted " + activity.getComponentName());
+//        Xlog.d("onActivityStarted " + activity.getComponentName());
     }
 
     @Override
     public void onActivityResumed(Activity activity) {
-        Xlog.d("onActivityResumed " + activity.getComponentName());
+//        Xlog.d("onActivityResumed " + activity.getComponentName());
     }
 
     @Override
     public void onActivityPaused(Activity activity) {
-        Xlog.d("onActivityPaused " + activity.getComponentName());
+//        Xlog.d("onActivityPaused " + activity.getComponentName());
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
-        Xlog.d("onActivityStopped " + activity.getComponentName());
+//        Xlog.d("onActivityStopped " + activity.getComponentName());
     }
 
     @Override
     public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-        Xlog.d("onActivitySaveInstanceState " + activity.getComponentName());
+//        Xlog.d("onActivitySaveInstanceState " + activity.getComponentName());
     }
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        Xlog.d("onActivityDestroyed " + activity.getComponentName());
+//        Xlog.d("onActivityDestroyed " + activity.getComponentName());
     }
 }

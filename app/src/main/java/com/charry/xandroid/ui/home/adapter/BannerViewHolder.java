@@ -37,7 +37,8 @@ public class BannerViewHolder implements MZViewHolder<BannerBean.DataBean> {
         requestOptions.error(R.drawable.icon_emptu);
 
         Glide.with(context)
-                .load(data.imagePath)
+                .load(R.mipmap.ic_launcher)
+//                .load(data.imagePath)
                 .apply(requestOptions)
                 .into(mImageView);
     }

@@ -55,6 +55,7 @@ public class MainActivity extends BaseActivity {
                 .subscribe();
     }
 
+
     private AlphaTabsIndicator alphaTabsIndicator;
 
     private class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener {
