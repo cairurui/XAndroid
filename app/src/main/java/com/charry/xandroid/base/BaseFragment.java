@@ -119,7 +119,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends SwipeBackFra
 
     @Override
     public boolean isNetworkConnected() {
-        return NetworkUtil.isNetworkEnable(MyApplication.getmApplication());
+        return NetworkUtil.isNetworkEnable(MyApplication.getApplication());
     }
 
     @Override

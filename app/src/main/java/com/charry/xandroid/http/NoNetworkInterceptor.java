@@ -19,7 +19,7 @@ import okhttp3.Response;
 public class NoNetworkInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
-        if (!NetworkUtil.isNetworkEnable(MyApplication.getmApplication())) {
+        if (!NetworkUtil.isNetworkEnable(MyApplication.getApplication())) {
 
             Observable.just(null).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Object>() {
                 @Override

@@ -74,5 +74,5 @@ dependencies {
     // 仿魅族BannerView
     compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
 
-
+    compile 'com.alipay.euler:andfix:0.5.0@aar'
 }

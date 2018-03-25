@@ -12,16 +12,16 @@ import com.charry.xandroid.R;
 public class UIUtil {
 
     public static void toash(String msg){
-        Toast.makeText(MyApplication.getmApplication(),msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(MyApplication.getApplication(),msg,Toast.LENGTH_SHORT).show();
     }
 
 
     public static int getColor(int r_color_id){
-       return MyApplication.getmApplication().getResources().getColor(R.color.possible_result_points);
+       return MyApplication.getApplication().getResources().getColor(R.color.possible_result_points);
     }
 
     public static MyApplication getApp(){
-        return MyApplication.getmApplication();
+        return MyApplication.getApplication();
     }
 
 

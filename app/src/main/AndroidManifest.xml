@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -34,9 +36,10 @@
         <activity android:name=".ui.learningConstraintLayout.LearningConstraintLayoutActivity" />
         <activity android:name=".ui.learningWebview.learningWebviewActivity" />
         <activity android:name=".ui.learningHeart.learningHeartActivity" />
-        <activity android:name=".ui.signInUp.SignInActivity"></activity>
+        <activity android:name=".ui.signInUp.SignInActivity" />
         <activity android:name=".ui.signInUp.SignUpActivity" />
-        <activity android:name=".ui.learningHandler.LearningHandlerActivity"></activity>
+        <activity android:name=".ui.learningHandler.LearningHandlerActivity" />
+        <activity android:name=".ui.learningAndfix.LearningAndfixActivity"></activity>
     </application>
 
 </manifest>

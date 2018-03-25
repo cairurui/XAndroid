@@ -12,8 +12,6 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
-import butterknife.internal.Utils;
-
 /**
  * Created by charry on 2018/3/21.
  */
@@ -50,7 +48,7 @@ public final class SPUtils {
     }
 
     private SPUtils(final String spName) {
-        sp = MyApplication.getmApplication().getSharedPreferences(spName, Context.MODE_PRIVATE);
+        sp = MyApplication.getApplication().getSharedPreferences(spName, Context.MODE_PRIVATE);
     }
 
     /**

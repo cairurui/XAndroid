@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+
 import com.charry.xandroid.R;
 import com.charry.xandroid.base.BaseActivity;
 import com.charry.xandroid.base.BasePresenter;
@@ -13,6 +14,7 @@ import com.charry.xandroid.ui.home.fragment.FindFragment;
 import com.charry.xandroid.ui.home.fragment.HomeFragment;
 import com.charry.xandroid.ui.home.fragment.MineFragment;
 import com.charry.xandroid.widget.alphatabs.AlphaTabsIndicator;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +49,10 @@ public class MainActivity extends BaseActivity {
         alphaTabsIndicator.getTabView(3).showPoint();
 
         mViewPger.setOffscreenPageLimit(4);
+
+        new RxPermissions(this)
+                .request("android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE")
+                .subscribe();
     }
 
     private AlphaTabsIndicator alphaTabsIndicator;
