@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -39,7 +39,8 @@
         <activity android:name=".ui.signInUp.SignInActivity" />
         <activity android:name=".ui.signInUp.SignUpActivity" />
         <activity android:name=".ui.learningHandler.LearningHandlerActivity" />
-        <activity android:name=".ui.learningAndfix.LearningAndfixActivity"></activity>
+        <activity android:name=".ui.learningAndfix.LearningAndfixActivity" />
+        <activity android:name=".ui.learningCunstomView.CustomViewActivity"></activity>
     </application>
 
 </manifest>

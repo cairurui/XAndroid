@@ -65,6 +65,7 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
         mList.add(new HomeItemEntity("学习 心跳包机制", learningHeartActivity.class));
         mList.add(new HomeItemEntity("学习 handle 机制", LearningHandlerActivity.class));
         mList.add(new HomeItemEntity("学习 andfix", LearningAndfixActivity.class));
+        mList.add(new HomeItemEntity("学习 自定义 view", LearningAndfixActivity.class));
     }
 
 
