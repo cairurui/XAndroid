@@ -117,7 +117,6 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
 
         mBannerList = new ArrayList<BannerBean>();
         mMZBanner = (MZBannerView) View.inflate(getContext(), R.layout.banner_home, null);
-
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, SizeUtils.dp2px(200));
         mMZBanner.setLayoutParams(layoutParams);
 
@@ -130,7 +129,6 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
 
     private void initBanner() {
         mBannerList.add(new BannerBean.DataBean());
-
         // 设置数据
         mMZBanner.setPages(mBannerList, mMZHolderCreator);
     }
@@ -144,6 +142,8 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
 
     @Override
     public void onBannerViewSuc(List<BannerBean.DataBean> data) {
+        mBannerList.clear();
+        mBannerList.addAll(data);
         mMZBanner.setPages(mBannerList, mMZHolderCreator);
         mHomeFragmentAdapter.notifyDataSetChanged();
     }

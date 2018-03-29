@@ -27,18 +27,17 @@ public class BannerViewHolder implements MZViewHolder<BannerBean.DataBean> {
         // 返回页面布局
         View view = LayoutInflater.from(context).inflate(R.layout.banner_item_home, null);
         mImageView = (ImageView) view.findViewById(R.id.banner_image);
+
+        requestOptions.placeholder(R.drawable.icon_emptu);
+        requestOptions.error(R.drawable.icon_emptu);
         return view;
     }
 
     @Override
     public void onBind(Context context, int position, BannerBean.DataBean data) {
         // 数据绑定
-        requestOptions.placeholder(R.drawable.icon_emptu);
-        requestOptions.error(R.drawable.icon_emptu);
-
         Glide.with(context)
-                .load(R.mipmap.ic_launcher)
-//                .load(data.imagePath)
+                .load(data.imagePath)
                 .apply(requestOptions)
                 .into(mImageView);
     }
