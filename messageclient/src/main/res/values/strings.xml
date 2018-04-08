@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MessageClient</string>
+
+
+    <string name="confirm">确定</string>
+
+
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="loading">正在加载中...</string>
+
+    <string name="progressActivityErrorButton">Try Again</string>
+    <string name="progressActivityEmptyTitlePlaceholder">Nothing Here</string>
+    <string name="progressActivityEmptyContentPlaceholder">We couldn\'t find anything. Tap the button to take your first image</string>
+
+</resources>

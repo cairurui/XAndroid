@@ -41,7 +41,15 @@
         <activity android:name=".ui.learningHandler.LearningHandlerActivity" />
         <activity android:name=".ui.learningAndfix.LearningAndfixActivity" />
         <activity android:name=".ui.learningCunstomView.CustomViewActivity" />
-        <activity android:name=".ui.learningBanner.LearningBannerActivity"></activity>
+        <activity android:name=".ui.learningBanner.LearningBannerActivity" />
+
+        <service android:name=".service.MessageService">
+            <intent-filter>
+                <action android:name="com.xiaocai.aidl.user" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
