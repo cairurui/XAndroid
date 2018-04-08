@@ -40,7 +40,8 @@
         <activity android:name=".ui.signInUp.SignUpActivity" />
         <activity android:name=".ui.learningHandler.LearningHandlerActivity" />
         <activity android:name=".ui.learningAndfix.LearningAndfixActivity" />
-        <activity android:name=".ui.learningCunstomView.CustomViewActivity"></activity>
+        <activity android:name=".ui.learningCunstomView.CustomViewActivity" />
+        <activity android:name=".ui.learningBanner.LearningBannerActivity"></activity>
     </application>
 
 </manifest>

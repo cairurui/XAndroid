@@ -36,6 +36,7 @@ public class BannerViewHolder implements MZViewHolder<BannerBean.DataBean> {
     @Override
     public void onBind(Context context, int position, BannerBean.DataBean data) {
         // 数据绑定
+
         Glide.with(context)
                 .load(data.imagePath)
                 .apply(requestOptions)

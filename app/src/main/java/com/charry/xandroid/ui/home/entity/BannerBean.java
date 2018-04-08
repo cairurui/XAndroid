@@ -20,6 +20,16 @@ public class BannerBean {
     public List<DataBean> data;
 
     public static class DataBean {
+        public int testPath;
+
+        public DataBean(int testPath) {
+            this.testPath = testPath;
+        }
+
+        public DataBean() {
+
+        }
+
         /**
          * desc : 一起来做个App吧
          * id : 10
@@ -30,6 +40,7 @@ public class BannerBean {
          * type : 0
          * url : http://www.wanandroid.com/blog/show/2
          */
+
 
         public String desc;
         public int id;

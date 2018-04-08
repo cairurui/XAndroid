@@ -18,6 +18,7 @@ import com.charry.xandroid.ui.home.adapter.HomeFragmentAdapter;
 import com.charry.xandroid.ui.home.entity.BannerBean;
 import com.charry.xandroid.ui.home.entity.HomeItemEntity;
 import com.charry.xandroid.ui.learningAndfix.LearningAndfixActivity;
+import com.charry.xandroid.ui.learningBanner.LearningBannerActivity;
 import com.charry.xandroid.ui.learningConstraintLayout.LearningConstraintLayoutActivity;
 import com.charry.xandroid.ui.learningHandler.LearningHandlerActivity;
 import com.charry.xandroid.ui.learningHeart.learningHeartActivity;
@@ -66,6 +67,7 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
         mList.add(new HomeItemEntity("学习 handle 机制", LearningHandlerActivity.class));
         mList.add(new HomeItemEntity("学习 andfix", LearningAndfixActivity.class));
         mList.add(new HomeItemEntity("学习 自定义 view", LearningAndfixActivity.class));
+        mList.add(new HomeItemEntity("学习 banner", LearningBannerActivity.class));
     }
 
 
@@ -125,6 +127,7 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
         mHomeFragmentAdapter.notifyDataSetChanged();
 
         getPresenter().getBanner();
+
     }
 
     private void initBanner() {
