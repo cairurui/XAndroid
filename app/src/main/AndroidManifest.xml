@@ -43,10 +43,12 @@
         <activity android:name=".ui.learningCunstomView.CustomViewActivity" />
         <activity android:name=".ui.learningBanner.LearningBannerActivity" />
 
-        <service android:name=".service.MessageService">
+        <service
+            android:name=".service.MessageService"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.xiaocai.aidl.user" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.charry.xandroid.service.MessageService" />
             </intent-filter>
         </service>
 

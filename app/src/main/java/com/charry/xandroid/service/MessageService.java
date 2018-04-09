@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 
 import com.charry.xandroid.UserAidl;
+import com.charry.xandroid.utils.Xlog;
 
 public class MessageService extends Service {
 
@@ -13,7 +14,7 @@ public class MessageService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        return mBinder;
+        return mBinder.asBinder();
     }
 
 
@@ -29,4 +30,9 @@ public class MessageService extends Service {
         }
     };
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Xlog.d("MessageService onCreate");
+    }
 }

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.charry.xandroid.UserAidl;
 
@@ -44,6 +45,8 @@ public class MessageActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                } else{
+                    Toast.makeText(MessageActivity.this,"aidl 返回为空",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -57,6 +60,9 @@ public class MessageActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                } else{
+                    Toast.makeText(MessageActivity.this,"aidl 返回为空",Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -66,11 +72,13 @@ public class MessageActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             userAidl = UserAidl.Stub.asInterface(service);
+            Toast.makeText(MessageActivity.this, "建立连接", Toast.LENGTH_SHORT).show();
+
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-
+            Toast.makeText(MessageActivity.this, "断开连接", Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -78,10 +86,16 @@ public class MessageActivity extends AppCompatActivity {
     private void startServerService() {
 
         Intent intent = new Intent();
-
-        intent.setAction("com.xiaocai.aidl.user");
+        intent.setAction("com.charry.xandroid.service.MessageService");
         // 在Android 5.0之后google出于安全的角度禁止了隐式声明Intent来启动Service.也禁止使用Intent filter.否则就会抛个异常出来
         intent.setPackage("com.charry.xandroid");
         bindService(intent, conn, Context.BIND_AUTO_CREATE);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(conn);
+    }
+
 }

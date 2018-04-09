@@ -1,5 +1,6 @@
 package com.charry.xandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import com.charry.xandroid.ui.home.fragment.ContactsFragment;
 import com.charry.xandroid.ui.home.fragment.FindFragment;
 import com.charry.xandroid.ui.home.fragment.HomeFragment;
 import com.charry.xandroid.ui.home.fragment.MineFragment;
+import com.charry.xandroid.ui.learningHandler.LearningHandlerActivity;
 import com.charry.xandroid.widget.alphatabs.AlphaTabsIndicator;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -60,6 +62,13 @@ public class MainActivity extends BaseActivity {
         new RxPermissions(this)
                 .request("android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE")
                 .subscribe();
+
+        startOtherActivity();
+    }
+
+    private void startOtherActivity() {
+        startActivity(new Intent(this, LearningHandlerActivity.class));
+        finish();
     }
 
 
