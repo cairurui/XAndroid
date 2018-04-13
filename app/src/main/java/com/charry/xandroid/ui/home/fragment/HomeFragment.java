@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.charry.xandroid.R;
 import com.charry.xandroid.base.BaseFragment;
 import com.charry.xandroid.ui.Learningfragment.LearningFragmentActivity;
+import com.charry.xandroid.ui.changeskin.ChangeSkinActivity;
 import com.charry.xandroid.ui.home.mvp.HomePagePresenter;
 import com.charry.xandroid.ui.home.mvp.HomePageView;
 import com.charry.xandroid.ui.home.adapter.BannerViewHolder;
@@ -57,6 +58,7 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
 
     {
         mList = new ArrayList<>();
+        mList.add(new HomeItemEntity("换肤学习", ChangeSkinActivity.class));
         mList.add(new HomeItemEntity("fragment切换", LearningFragmentActivity.class));
         mList.add(new HomeItemEntity("mvp使用", LearningMVPActivity.class));
         mList.add(new HomeItemEntity("状态图的使用", UseProgressLayoutListActivity.class));
@@ -68,6 +70,7 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
         mList.add(new HomeItemEntity("学习 andfix", LearningAndfixActivity.class));
         mList.add(new HomeItemEntity("学习 自定义 view", LearningAndfixActivity.class));
         mList.add(new HomeItemEntity("学习 banner", LearningBannerActivity.class));
+
     }
 
 
@@ -136,7 +139,7 @@ public class HomeFragment extends BaseFragment<HomePagePresenter> implements Hom
         mMZBanner.setPages(mBannerList, mMZHolderCreator);
     }
 
-    MZHolderCreator mMZHolderCreator =   new MZHolderCreator<BannerViewHolder>() {
+    MZHolderCreator mMZHolderCreator = new MZHolderCreator<BannerViewHolder>() {
         @Override
         public BannerViewHolder createViewHolder() {
             return new BannerViewHolder();

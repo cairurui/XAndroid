@@ -1,7 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="AppTheme.Base">
-    </style>
+    <style name="AppTheme" parent="AppTheme.Base"></style>
 
     <!-- Base application theme. -->
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
@@ -35,6 +34,13 @@
         <item name="android:minHeight">45dp</item>
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:theme">@style/PopWindowStyle</item>
+    </style>
+
+    <style name="dialogstyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <!--//进入时的动画-->
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+        <!--//退出时的动画-->
     </style>
 
 

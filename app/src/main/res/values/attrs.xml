@@ -37,4 +37,6 @@
         <attr name="badgeBackgroundColor" format="color" />
         <attr name="paddingTexwithIcon" format="dimension"/>
     </declare-styleable>
+
+
 </resources>
