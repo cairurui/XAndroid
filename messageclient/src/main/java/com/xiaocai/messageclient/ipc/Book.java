@@ -62,4 +62,11 @@ public class Book implements Parcelable {
         }
     };
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "price=" + price +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

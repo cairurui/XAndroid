@@ -53,7 +53,7 @@ public class Proxy implements BookManager {
         try {
             data.writeInterfaceToken(DESCRIPTOR);
             if (book != null) {
-                data.writeInt(0);
+                data.writeInt(1);
                 book.writeToParcel(data, 0);
             } else {
                 data.writeInt(0);

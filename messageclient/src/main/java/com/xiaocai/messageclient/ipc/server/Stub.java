@@ -70,7 +70,7 @@ public abstract class Stub extends Binder implements BookManager {
                 data.enforceInterface(DESCRIPTOR);
                 List<Book> books = this.getBooks();
                 reply.writeNoException();
-                reply.writeList(books);
+                reply.writeTypedList(books);
                 return true;
             case TRANSAVTION_addBook:
                 data.enforceInterface(DESCRIPTOR);
