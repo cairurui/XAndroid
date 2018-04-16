@@ -12,6 +12,10 @@ public class Book implements Parcelable {
     private int price;
     private String name;
 
+    public Book(int price, String name) {
+        this.price = price;
+        this.name = name;
+    }
 
     public int getPrice() {
         return price;
