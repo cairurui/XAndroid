@@ -51,7 +51,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".ui.changeskin.ChangeSkinActivity"></activity>
+        <activity android:name=".ui.changeskin.ChangeSkinActivity" />
+        <activity android:name=".ui.customview.LearningCustomViewActivity"></activity>
     </application>
 
 </manifest>

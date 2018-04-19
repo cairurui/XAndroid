@@ -81,6 +81,6 @@ public class Xlog {
     }
 
     public static void d(String msg) {
-        Xlog.m(TAG, msg, 1, 5);
+        Xlog.m(TAG, msg, 1, 4);
     }
 }

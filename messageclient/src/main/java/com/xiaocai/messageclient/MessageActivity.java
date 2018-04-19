@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.charry.xandroid.UserAidl;
 
+import java.lang.reflect.Proxy;
+
 public class MessageActivity extends AppCompatActivity {
 
     Button btnName;
@@ -66,6 +68,8 @@ public class MessageActivity extends AppCompatActivity {
                 }
             }
         });
+
+        startActivity(new Intent(this,MessageActivity.class));
     }
 
     ServiceConnection conn = new ServiceConnection() {
@@ -90,6 +94,8 @@ public class MessageActivity extends AppCompatActivity {
         // 在Android 5.0之后google出于安全的角度禁止了隐式声明Intent来启动Service.也禁止使用Intent filter.否则就会抛个异常出来
         intent.setPackage("com.charry.xandroid");
         bindService(intent, conn, Context.BIND_AUTO_CREATE);
+
+
     }
 
     @Override

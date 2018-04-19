@@ -39,4 +39,9 @@
     </declare-styleable>
 
 
+    <declare-styleable name="MyTextView">
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+    </declare-styleable>
+
 </resources>
