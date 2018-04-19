@@ -112,3 +112,4 @@ public class MyTextView extends View {
 ```
 
 
+![](img/mytextview.png)

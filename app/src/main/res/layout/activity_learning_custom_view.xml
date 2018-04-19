@@ -9,7 +9,6 @@
 
     <com.charry.xandroid.ui.customview.MyTextView
         android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
         app:text="添加自定义属性"
         app:textColor="@android:color/white"
         android:layout_height="wrap_content" />
