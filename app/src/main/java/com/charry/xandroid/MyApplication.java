@@ -41,23 +41,23 @@ public class MyApplication extends Application implements Application.ActivityLi
         mPatchManager.loadPatch();
         Log.d(TAG, "apatch loaded.");
 
-        // add patch at runtime
-        try {
-            // .apatch file path
-            String patchFileString = Environment.getExternalStorageDirectory()
-                    .getAbsolutePath() + APATCH_PATH;
-            mPatchManager.addPatch(patchFileString);
-            Log.d(TAG, "apatch:" + patchFileString + " added.");
-
-            File f = new File(patchFileString);
-            if (f.exists()) {
-                boolean result =f.delete();
-                if (!result)
-                    Log.e(TAG, patchFileString + " delete fail");
-            }
-        } catch (IOException e) {
-            Log.e(TAG, "", e);
-        }
+//        // add patch at runtime
+//        try {
+//            // .apatch file path
+//            String patchFileString = Environment.getExternalStorageDirectory()
+//                    .getAbsolutePath() + APATCH_PATH;
+//            mPatchManager.addPatch(patchFileString);
+//            Log.d(TAG, "apatch:" + patchFileString + " added.");
+//
+//            File f = new File(patchFileString);
+//            if (f.exists()) {
+//                boolean result =f.delete();
+//                if (!result)
+//                    Log.e(TAG, patchFileString + " delete fail");
+//            }
+//        } catch (IOException e) {
+//            Log.e(TAG, "", e);
+//        }
     }
 
     public PatchManager getPatchManager() {
