@@ -14,6 +14,7 @@ import com.charry.xandroid.base.BaseActivity;
 import com.charry.xandroid.base.BasePresenter;
 import com.charry.xandroid.ui.changeskin.ChangeSkinActivity;
 import com.charry.xandroid.ui.customview.LearningCustomViewActivity;
+import com.charry.xandroid.ui.customview.LetterSideBarActivity;
 import com.charry.xandroid.ui.home.fragment.ContactsFragment;
 import com.charry.xandroid.ui.home.fragment.FindFragment;
 import com.charry.xandroid.ui.home.fragment.HomeFragment;
@@ -69,7 +70,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startOtherActivity() {
-        startActivity(new Intent(this, LearningCustomViewActivity.class));
+        startActivity(new Intent(this, LetterSideBarActivity.class));
         finish();
     }
 

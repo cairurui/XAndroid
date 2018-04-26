@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.charry.xandroid.ui.customview.LetterSideBarActivity">
+
+    <com.charry.xandroid.ui.customview.LetterSideBar
+        android:layout_width="100dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:id="@+id/lsb"
+        android:layout_alignParentRight="true"
+        android:background="@color/app_primary_color"
+        android:layout_height="match_parent"  />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="hello"
+        android:id="@+id/tv"
+        android:textSize="32sp"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

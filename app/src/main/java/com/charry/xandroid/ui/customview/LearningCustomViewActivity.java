@@ -26,5 +26,8 @@ public class LearningCustomViewActivity extends AppCompatActivity {
             }
         }, 1000);
 
+
+      RatingBar rating_bar =   findViewById(R.id.rating_bar);
+        rating_bar.setCurrentGrade(3);
     }
 }

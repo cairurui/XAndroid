@@ -7,10 +7,18 @@
     android:orientation="vertical"
     tools:context="com.charry.xandroid.ui.customview.LearningCustomViewActivity">
 
+    <com.charry.xandroid.ui.customview.RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rating_bar"
+        app:gradeNumber="5"
+        app:starFocus="@drawable/star_selected"
+        app:starNormal="@drawable/star_normal" />
+
     <com.charry.xandroid.ui.customview.ShapeView
-        android:layout_width="50dp"
-        android:layout_margin="20dp"
         android:id="@+id/shape_view"
-        android:layout_height="50dp" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp" />
 
 </LinearLayout>
