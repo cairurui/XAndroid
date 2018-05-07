@@ -53,7 +53,8 @@
 
         <activity android:name=".ui.changeskin.ChangeSkinActivity" />
         <activity android:name=".ui.customview.LearningCustomViewActivity" />
-        <activity android:name=".ui.customview.LetterSideBarActivity"></activity>
+        <activity android:name=".ui.customview.LetterSideBarActivity" />
+        <activity android:name=".ui.customview.TagLayoutActivity"></activity>
     </application>
 
 </manifest>
