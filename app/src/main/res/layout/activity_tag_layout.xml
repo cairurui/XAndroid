@@ -3,93 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.charry.xandroid.ui.customview.TagLayoutActivity">
 
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp" />
 
     <com.charry.xandroid.ui.customview.TagLayout
-        android:background="#66666666"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#66666666">
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="1hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="1hello word" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="2hello 小菜"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="2hello 小菜" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="3小菜"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="3小菜" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="4hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="4hello word" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="5hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="5hello word" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="6hello 你好世界"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="6hello 你好世界" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="7hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="7hello word" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="8hello word"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="9hello word"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="10hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="8hello word" />
 
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="11hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="9hello word" />`
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="12hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="10hello word" />
 
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="13hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="11hello word" />
 
         <TextView
+            style="@style/Taglayout_style"
             android:layout_width="wrap_content"
-            android:text="14hello word"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="12hello word" />
 
+
+        <TextView
+            style="@style/Taglayout_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13hello word" />
+
+        <TextView
+            style="@style/Taglayout_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14hello word" />
 
 
     </com.charry.xandroid.ui.customview.TagLayout>

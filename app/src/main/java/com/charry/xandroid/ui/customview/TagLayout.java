@@ -58,17 +58,17 @@ public class TagLayout extends ViewGroup {
 
             ViewGroup.MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
 
-            Log.d(TAG, "onMeasure: left + view.getMeasuredWidth()"+(left + view.getMeasuredWidth())+" text:"+(((TextView)view).getText()));
-            if (left + view.getMeasuredWidth() > width) {
+            Log.d(TAG, "onMeasure: left + view.getMeasuredWidth()" + (left + view.getMeasuredWidth()) + " text:" + (((TextView) view).getText()));
+            if (left + view.getMeasuredWidth() + params.leftMargin + params.rightMargin > width) {
                 // 需要换行
-                height += view.getMeasuredHeight();
-                left = getPaddingLeft() + view.getMeasuredWidth();
+                height += view.getMeasuredHeight() + params.topMargin + params.bottomMargin;
+                left = getPaddingLeft() + view.getMeasuredWidth() + params.leftMargin + params.rightMargin;
 
                 childViewList = new ArrayList<>();
                 mChildViews.add(childViewList);
             } else {
-                left += view.getMeasuredWidth();
-                maxHeight =view.getMeasuredHeight();
+                left += view.getMeasuredWidth() + params.leftMargin + params.rightMargin;
+                maxHeight = view.getMeasuredHeight() + params.topMargin + params.bottomMargin;
             }
 
             childViewList.add(view);
@@ -96,23 +96,25 @@ public class TagLayout extends ViewGroup {
 
         int top = getPaddingTop();
 
-        Log.d(TAG, "onLayout: top :"+top);
+        Log.d(TAG, "onLayout: top :" + top);
         for (List<View> childViewList : mChildViews) {
             int left = getPaddingLeft();
 
             for (View view : childViewList) {
 
+                ViewGroup.MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
+                left += params.leftMargin;
+                int childLeft = left + params.leftMargin;
+                int right = childLeft + view.getMeasuredWidth();
+                int bottom = top + params.topMargin + view.getMeasuredHeight();
 
-                int right = left + view.getMeasuredWidth();
-                int bottom = top + view.getMeasuredHeight();
 
-
-                Log.d(TAG, "onLayout: l:"+left+"    t:"+top+"   r:"+right+" b:"+bottom);
-                view.layout(left, top, right, bottom);
-                left += view.getMeasuredWidth();
+                Log.d(TAG, "onLayout: l:" + left + "    t:" + top + "   r:" + right + " b:" + bottom);
+                view.layout(childLeft, top + params.topMargin, right, bottom);
+                left += view.getMeasuredWidth() + params.rightMargin;
             }
-
-            top += childViewList.get(0).getMeasuredHeight();
+            ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childViewList.get(0).getLayoutParams();
+            top += childViewList.get(0).getMeasuredHeight() + params.topMargin + params.bottomMargin;
         }
 
     }
