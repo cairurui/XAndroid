@@ -16,6 +16,7 @@ import com.charry.xandroid.ui.changeskin.ChangeSkinActivity;
 import com.charry.xandroid.ui.customview.LearningCustomViewActivity;
 import com.charry.xandroid.ui.customview.LetterSideBarActivity;
 import com.charry.xandroid.ui.customview.TagLayoutActivity;
+import com.charry.xandroid.ui.customview.touch.TouchDemoActivity;
 import com.charry.xandroid.ui.home.fragment.ContactsFragment;
 import com.charry.xandroid.ui.home.fragment.FindFragment;
 import com.charry.xandroid.ui.home.fragment.HomeFragment;
@@ -71,7 +72,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startOtherActivity() {
-        startActivity(new Intent(this, TagLayoutActivity.class));
+        startActivity(new Intent(this, TouchDemoActivity.class));
         finish();
     }
 
