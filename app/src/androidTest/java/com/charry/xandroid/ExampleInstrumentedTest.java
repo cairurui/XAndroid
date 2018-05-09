@@ -23,4 +23,7 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.charry.xandroid", appContext.getPackageName());
     }
+
+
+
 }

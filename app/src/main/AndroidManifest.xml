@@ -54,8 +54,9 @@
         <activity android:name=".ui.changeskin.ChangeSkinActivity" />
         <activity android:name=".ui.customview.LearningCustomViewActivity" />
         <activity android:name=".ui.customview.LetterSideBarActivity" />
+        <activity android:name=".ui.customview.ArtLearningActivity" />
         <activity android:name=".ui.customview.TagLayoutActivity" />
-        <activity android:name=".ui.customview.touch.TouchDemoActivity"></activity>
+        <activity android:name=".ui.customview.touch.TouchDemoActivity" />
     </application>
 
 </manifest>
