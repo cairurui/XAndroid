@@ -57,6 +57,7 @@
         <activity android:name=".ui.customview.ArtLearningActivity" />
         <activity android:name=".ui.customview.TagLayoutActivity" />
         <activity android:name=".ui.customview.touch.TouchDemoActivity" />
+        <activity android:name=".ui.customview.touch.SlidingMenuDemoActivity"></activity>
     </application>
 
 </manifest>
