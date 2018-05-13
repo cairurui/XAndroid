@@ -7,7 +7,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
@@ -18,7 +17,7 @@ import com.charry.xandroid.R;
  * Created by xiaocai on 2018/5/10.
  */
 
-public class SlidingMenu extends HorizontalScrollView {
+public class QQSlidingMenu extends HorizontalScrollView {
 
 
     private final int mMenuWidth;
@@ -29,15 +28,15 @@ public class SlidingMenu extends HorizontalScrollView {
     private GestureDetector mGestureDetector;
     private boolean mIsMenuOpen = false;
 
-    public SlidingMenu(Context context) {
+    public QQSlidingMenu(Context context) {
         this(context, null);
     }
 
-    public SlidingMenu(Context context, AttributeSet attrs) {
+    public QQSlidingMenu(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SlidingMenu(Context context, AttributeSet attrs, int defStyleAttr) {
+    public QQSlidingMenu(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         Log.d(TAG, "SlidingMenu() called with: context = [" + context + "], attrs = [" + attrs + "], defStyleAttr = [" + defStyleAttr + "]");
