@@ -1,5 +1,6 @@
 package com.charry.xandroid.ui.customview.drag;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.charry.xandroid.MainActivity;
 import com.charry.xandroid.R;
+import com.charry.xandroid.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class DragDemoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag_demo);
+        StatusBarUtil.setStatusBarBg(this, Color.RED);
 
         mListView = (ListView) findViewById(R.id.list_view);
 

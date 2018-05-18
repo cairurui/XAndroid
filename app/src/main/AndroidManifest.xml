@@ -58,7 +58,8 @@
         <activity android:name=".ui.customview.TagLayoutActivity" />
         <activity android:name=".ui.customview.touch.TouchDemoActivity" />
         <activity android:name=".ui.customview.touch.SlidingMenuDemoActivity" />
-        <activity android:name=".ui.customview.drag.DragDemoActivity"></activity>
+        <activity android:name=".ui.customview.drag.DragDemoActivity" />
+        <activity android:name=".ui.customview.LoadingViewActivity"></activity>
     </application>
 
 </manifest>
