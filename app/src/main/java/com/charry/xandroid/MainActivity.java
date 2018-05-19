@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 
 import com.charry.xandroid.base.BaseActivity;
 import com.charry.xandroid.base.BasePresenter;
+import com.charry.xandroid.ui.customview.AnimDemoActivity;
 import com.charry.xandroid.ui.customview.LoadingViewActivity;
 import com.charry.xandroid.ui.customview.drag.DragDemoActivity;
 import com.charry.xandroid.ui.customview.touch.TouchDemoActivity;
@@ -68,7 +69,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startOtherActivity() {
-        startActivity(new Intent(this, LoadingViewActivity.class));
+        startActivity(new Intent(this, AnimDemoActivity.class));
         finish();
     }
 
