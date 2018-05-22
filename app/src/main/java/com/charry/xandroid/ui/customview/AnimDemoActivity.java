@@ -1,5 +1,8 @@
 package com.charry.xandroid.ui.customview;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +37,19 @@ public class AnimDemoActivity extends AppCompatActivity {
     private void startAnim() {
 //        animFromXml();
         animFromeCode();
+
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(1);
+        valueAnimator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                super.onAnimationCancel(animation);
+            }
+        });
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+            }
+        });
 
     }
 
