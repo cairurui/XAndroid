@@ -1,5 +1,6 @@
 package com.charry.xandroid.ui.customview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 
+import com.charry.xandroid.MainActivity;
 import com.charry.xandroid.R;
 
 public class AnimDemoActivity extends AppCompatActivity {
@@ -44,5 +46,15 @@ public class AnimDemoActivity extends AppCompatActivity {
         TranslateAnimation ta = new TranslateAnimation(0, 100, 0, 100);
         ta.setDuration(1000);
         btn_target.startAnimation(ta);
+
+
+        startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(R.anim.slide_left_in,R.anim.slide_right_out);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_left_in,R.anim.slide_right_out);
     }
 }
