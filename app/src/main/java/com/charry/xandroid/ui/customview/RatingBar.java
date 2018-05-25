@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -86,6 +87,8 @@ public class RatingBar extends View {
             case MotionEvent.ACTION_MOVE:
 
                 float x = event.getX();
+
+                Log.d(TAG, "onTouchEvent: x:"+x+"  rawx:"+event.getRawX());
                 int currentGrade = (int) ((x / mStarNormalBitmap.getWidth()) + 1);
                 if (currentGrade < 0)
                     currentGrade = 0;

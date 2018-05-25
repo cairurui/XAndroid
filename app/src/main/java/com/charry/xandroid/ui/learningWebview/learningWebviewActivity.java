@@ -39,7 +39,7 @@ public class learningWebviewActivity extends BaseActivity {
         mWebSettings.setJavaScriptEnabled(true);
 
 
-        mWebview.loadUrl("https://www.baidu.com/");
+        mWebview.loadUrl("file:///android_asset/index.html");
 
         // 设置不用系统浏览器打开,直接显示在当前Webview
         mWebview.setWebViewClient(new WebViewClient() {

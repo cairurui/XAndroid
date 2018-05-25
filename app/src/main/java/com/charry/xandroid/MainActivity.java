@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import com.charry.xandroid.base.BaseActivity;
 import com.charry.xandroid.base.BasePresenter;
 import com.charry.xandroid.ui.customview.AnimDemoActivity;
+import com.charry.xandroid.ui.customview.LearningCustomViewActivity;
 import com.charry.xandroid.ui.customview.LoadingViewActivity;
 import com.charry.xandroid.ui.customview.drag.DragDemoActivity;
 import com.charry.xandroid.ui.customview.touch.TouchDemoActivity;
@@ -19,6 +20,7 @@ import com.charry.xandroid.ui.home.fragment.ContactsFragment;
 import com.charry.xandroid.ui.home.fragment.FindFragment;
 import com.charry.xandroid.ui.home.fragment.HomeFragment;
 import com.charry.xandroid.ui.home.fragment.MineFragment;
+import com.charry.xandroid.ui.learningWebview.learningWebviewActivity;
 import com.charry.xandroid.widget.alphatabs.AlphaTabsIndicator;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -69,7 +71,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startOtherActivity() {
-        startActivity(new Intent(this, AnimDemoActivity.class));
+        startActivity(new Intent(this, learningWebviewActivity.class));
         finish();
     }
 
