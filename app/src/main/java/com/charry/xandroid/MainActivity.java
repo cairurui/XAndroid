@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 
 import com.charry.xandroid.base.BaseActivity;
 import com.charry.xandroid.base.BasePresenter;
+import com.charry.xandroid.ui.changeskin.ChangeSkinActivity;
 import com.charry.xandroid.ui.customview.AnimDemoActivity;
 import com.charry.xandroid.ui.customview.LearningCustomViewActivity;
 import com.charry.xandroid.ui.customview.LoadingViewActivity;
@@ -71,7 +72,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void startOtherActivity() {
-        startActivity(new Intent(this, learningWebviewActivity.class));
+        startActivity(new Intent(this, ChangeSkinActivity.class));
         finish();
     }
 
