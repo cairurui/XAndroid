@@ -1,29 +1,15 @@
-# Android 进阶笔记
+# Summary
 
-### 为什么要在 gitbook 上写？
-其实可以选在其他地方写，但很多地方都太乱了，想从一个新的地方写。
+* [简介](README.md)
+* [android 原生学习](blog/008 Android 原生学习介绍.md)
+    * [001-手动写 AIDL 文件](blog/001-手动写 AIDL 文件.md)
+    * [002-自定义view](blog/002-自定义view.md)
+    * [003 invalidate 的分析](blog/003 invalidate 的分析.md)
+    * [004 Android View 事件分发](blog/004 Android View 事件分发.md)
+    * [005 属性动画](blog/005 属性动画.md)
+    * [006 inflater 源码分析](blog/006 inflater 源码分析.md)
+    * [007 博客计划](blog/007 博客计划.md)
+    * [008 Android 原生学习介绍](blog/008 Android 原生学习介绍.md)
+    * [009 recyclerview源码及自定义layoutmanager](blog/009 recyclerview源码及自定义layoutmanager.md)
+    * [010 view_touch源码](blog/010 view_touch源码.md)
 
-### 列出要写的博客
-
-Android 原生
-
-- Handler 源码
-- recyclerview 源码及自定义 layoutmanager
-- view touch 源码
-- 自定义 view 三部曲
-- Activity 启动流程
-- AIDL 过程
-- 性能优化
-
-
-第三方框架
-
-- butterknife 源码
-- 插件化换肤
-- 插件化/热修复
-- eventbus 源码
-- okhttp 源码
-- rxjava 源码
-- retrofit 源码
-- glide 源码
-- Arouter 源码
