@@ -1,0 +1,573 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>006 inflater 源码分析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="007 博客计划.html" />
+    
+    
+    <link rel="prev" href="005 属性动画.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="008 Android 原生学习介绍.html">
+            
+                <a href="008 Android 原生学习介绍.html">
+            
+                    
+                    android 原生学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="001-手动写 AIDL 文件.html">
+            
+                <a href="001-手动写 AIDL 文件.html">
+            
+                    
+                    001-手动写 AIDL 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="002-自定义view.html">
+            
+                <a href="002-自定义view.html">
+            
+                    
+                    002-自定义view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="003 invalidate 的分析.html">
+            
+                <a href="003 invalidate 的分析.html">
+            
+                    
+                    003 invalidate 的分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="004 Android View 事件分发.html">
+            
+                <a href="004 Android View 事件分发.html">
+            
+                    
+                    004 Android View 事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="005 属性动画.html">
+            
+                <a href="005 属性动画.html">
+            
+                    
+                    005 属性动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="006 inflater 源码分析.html">
+            
+                <a href="006 inflater 源码分析.html">
+            
+                    
+                    006 inflater 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="007 博客计划.html">
+            
+                <a href="007 博客计划.html">
+            
+                    
+                    007 博客计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="008 Android 原生学习介绍.html">
+            
+                <a href="008 Android 原生学习介绍.html">
+            
+                    
+                    008 Android 原生学习介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="009 recyclerview源码及自定义layoutmanager.html">
+            
+                <a href="009 recyclerview源码及自定义layoutmanager.html">
+            
+                    
+                    009 recyclerview源码及自定义layoutmanager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="010 view_touch源码.html">
+            
+                <a href="010 view_touch源码.html">
+            
+                    
+                    010 view_touch源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >006 inflater 源码分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>LayoutInflater &#x7684;&#x4E00;&#x822C;&#x83B7;&#x53D6;&#x662F; from&#xFF0C;&#x76F4;&#x63A5;&#x770B;&#x4E0B;&#x6E90;&#x7801;</p>
+<pre><code class="lang-java">   <span class="hljs-comment">/**
+     * Obtains the LayoutInflater from the given context.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> LayoutInflater <span class="hljs-title">from</span><span class="hljs-params">(Context context)</span> </span>{
+        LayoutInflater LayoutInflater =
+                (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        <span class="hljs-keyword">if</span> (LayoutInflater == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AssertionError(<span class="hljs-string">&quot;LayoutInflater not found.&quot;</span>);
+        }
+        <span class="hljs-keyword">return</span> LayoutInflater;
+    }
+</code></pre>
+<p>&#x8C03;&#x7528;&#x4E86; Comtext &#x7684; getSystemService,&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5F97;&#x5230;&#x7684;&#x662F;&#x5355;&#x4F8B;&#x7684;&#x540E;&#x9762;&#x4F1A;&#x5206;&#x6790;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x5F88;&#x591A;&#x7CFB;&#x7EDF;&#x5BF9;&#x8C61;</p>
+<pre><code>// &#x8C03;&#x7528;&#x4E86; Comtext &#x7684; getSystemService
+public abstract @Nullable Object getSystemService(@ServiceName @NonNull String name);
+</code></pre><p>&#x867D;&#x7136;&#x5DF2;&#x7ECF;&#x77E5;&#x9053; Comtext &#x7684;&#x5B9E;&#x73B0;&#x662F; ComtextImpl&#xFF0C;&#x600E;&#x4E48;&#x9A8C;&#x8BC1;&#x5C31;&#x662F; ComtextImpl &#x5462;&#xFF1F;Activity &#x7684;&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#xFF01;
+Activity &#x662F;&#x7531; ActivityThread &#x5176;&#x4E2D;&#x7684; main &#x65B9;&#x6CD5;&#x542F;&#x52A8;&#x7684;</p>
+<pre><code class="lang-java">
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        ...
+        Looper.prepareMainLooper();
+
+        ActivityThread thread = <span class="hljs-keyword">new</span> ActivityThread();
+        thread.attach(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-keyword">if</span> (sMainThreadHandler == <span class="hljs-keyword">null</span>) {
+            sMainThreadHandler = thread.getHandler();
+        }
+        ...
+        Looper.loop();
+
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Main thread loop unexpectedly exited&quot;</span>);
+    }
+</code></pre>
+<p>&#x5728;&#x521B;&#x5EFA;&#x6765; ActivityThread &#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#x8C03;&#x7528; thread.attach(false)&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4EE3;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x91CC;&#x660E;&#x663E;&#x4E0D;&#x662F;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;&#xFF0C;&#x7EE7;&#x7EED;&#x770B;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java">
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> system)</span> </span>{
+
+        <span class="hljs-keyword">if</span> (!system) {
+
+            ViewRootImpl.addFirstDrawHandler(<span class="hljs-keyword">new</span> Runnable() {
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                    ensureJitEnabled();
+                }
+            });
+            android.ddm.DdmHandleAppName.setAppName(<span class="hljs-string">&quot;&lt;pre-initialized&gt;&quot;</span>,
+                                                    UserHandle.myUserId());
+            RuntimeInit.setApplicationObject(mAppThread.asBinder());
+            <span class="hljs-keyword">final</span> IActivityManager mgr = ActivityManager.getService();
+            <span class="hljs-keyword">try</span> {
+                mgr.attachApplication(mAppThread); <span class="hljs-comment">// &#x5173;&#x8054; mAppThread</span>
+            } <span class="hljs-keyword">catch</span> (RemoteException ex) {
+                <span class="hljs-keyword">throw</span> ex.rethrowFromSystemServer();
+            }
+
+        } <span class="hljs-keyword">else</span> {
+
+        }
+        ...
+    }
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6D89;&#x53CA;&#x5230;&#x6765; Binder &#x7684;&#x4E1C;&#x897F;&#x4E86;&#xFF0C;&#x4F46;&#x6700;&#x7EC8; Binder &#x4F1A;&#x56DE;&#x8C03;&#x7ED9; Handler</p>
+<pre><code>    // H &#x662F; Activity &#x7684;&#x5185;&#x90E8;&#x7C7B;
+    private class H extends Handler {
+        public void handleMessage(Message msg) {
+            if (DEBUG_MESSAGES) Slog.v(TAG, &quot;&gt;&gt;&gt; handling: &quot; + codeToString(msg.what));
+            switch (msg.what) {
+                case LAUNCH_ACTIVITY: {
+                    Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, &quot;activityStart&quot;);
+                    final ActivityClientRecord r = (ActivityClientRecord) msg.obj;
+
+                    r.packageInfo = getPackageInfoNoCheck(
+                            r.activityInfo.applicationInfo, r.compatInfo);
+                    handleLaunchActivity(r, null, &quot;LAUNCH_ACTIVITY&quot;);
+                    Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
+                } break;
+</code></pre><p>&#x5728; handler &#x4E2D;&#x8C03;&#x7528;&#x4E86; handleLaunchActivity &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C31;&#x662F;&#x542F;&#x52A8; Activity &#x7684;&#x65B9;&#x6CD5;&#x4E86;</p>
+<pre><code class="lang-java">
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleLaunchActivity</span><span class="hljs-params">(ActivityClientRecord r, Intent customIntent, String reason)</span> </span>{
+        WindowManagerGlobal.initialize();
+        <span class="hljs-comment">// &#x521B;&#x5EFA; activity</span>
+        Activity a = performLaunchActivity(r, customIntent);
+
+        <span class="hljs-keyword">if</span> (a != <span class="hljs-keyword">null</span>) {
+            r.createdConfig = <span class="hljs-keyword">new</span> Configuration(mConfiguration);
+            reportSizeConfigurations(r);
+            Bundle oldState = r.state;
+            <span class="hljs-comment">// &#x63A5;&#x7740;&#x8C03;&#x7528; handleResumeActivity</span>
+            handleResumeActivity(r.token, <span class="hljs-keyword">false</span>, r.isForward,
+                    !r.activity.mFinished &amp;&amp; !r.startsNotResumed, r.lastProcessedSeq, reason);
+
+        } <span class="hljs-keyword">else</span> {
+            ...
+        }
+    }
+</code></pre>
+<pre><code>
+    private Activity performLaunchActivity(ActivityClientRecord r, Intent customIntent) {
+        // &#x521B;&#x5EFA; context
+        ContextImpl appContext = createBaseContextForActivity(r);
+        Activity activity = null;
+        try {
+            // &#x521B;&#x5EFA; activity
+            java.lang.ClassLoader cl = appContext.getClassLoader();
+            activity = mInstrumentation.newActivity(
+                    cl, component.getClassName(), r.intent);
+        } catch (Exception e) {
+            ...
+        }
+
+        try {
+            // &#x83B7;&#x53D6; application
+            Application app = r.packageInfo.makeApplication(false, mInstrumentation);
+
+            if (activity != null) {
+                CharSequence title = r.activityInfo.loadLabel(appContext.getPackageManager());
+                Configuration config = new Configuration(mCompatConfiguration);
+                appContext.setOuterContext(activity);
+                activity.attach(appContext, this, getInstrumentation(), r.token,
+                        r.ident, app, r.intent, r.activityInfo, title, r.parent,
+                        r.embeddedID, r.lastNonConfigurationInstances, config,
+                        r.referrer, r.voiceInteractor, window, r.configCallback);
+
+
+                activity.mCalled = false;
+                // &#x8C03;&#x7528; callActivityOnCreate &#x4F1A;&#x8C03;&#x7528; activity&#x7684; oncreate &#x65B9;&#x6CD5;
+                if (r.isPersistable()) {
+                    mInstrumentation.callActivityOnCreate(activity, r.state, r.persistentState);
+                } else {
+                    mInstrumentation.callActivityOnCreate(activity, r.state);
+                }
+                ...
+
+        return activity;
+    }
+</code></pre><p>&#x4E0A;&#x9762;&#x8C03;&#x7528;</p>
+<ul>
+<li>createBaseContextForActivity &#x4E3A; activity &#x521B;&#x5EFA; context</li>
+<li>&#x521B;&#x5EFA; activity &#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</li>
+<li>&#x8C03;&#x7528; activity &#x7684; attach</li>
+<li>&#x8C03;&#x7528; mInstrumentation.callActivityOnCreate &#x8D70;&#x5230; activity &#x7684; oncreate</li>
+</ul>
+<p>&#x63A5;&#x7740;&#x770B;&#x5230; createBaseContextForActivity</p>
+<pre><code>    private ContextImpl createBaseContextForActivity(ActivityClientRecord r) {
+        ...
+        ContextImpl appContext = ContextImpl.createActivityContext(
+                this, r.packageInfo, r.activityInfo, r.token, displayId, r.overrideConfig);
+       ...
+        return appContext;
+    }
+</code></pre><p>&#x8FD9;&#x91CC;&#x8BC1;&#x660E;&#x4E86; context &#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F; ContextImpl</p>
+<p>&#x7EE7;&#x7EED;&#x56DE;&#x5230;&#x6700;&#x521D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x770B; context &#x7684; getSystemService &#x5177;&#x4F53;&#x5B9E;&#x73B0;</p>
+<pre><code>    @Override
+    public Object getSystemService(String name) {
+        return SystemServiceRegistry.getSystemService(this, name);
+    }
+</code></pre><p>&#x8FD9;&#x91CC;&#x770B;&#x5230;&#x7684;&#x662F; api 27 &#x7684;&#x7248;&#x672C;&#xFF0C;&#x8DDF;&#x4E4B;&#x524D;&#x7248;&#x672C;&#x6709;&#x5F88;&#x5927;&#x7684;&#x4E0D;&#x540C;&#xFF0C;api 27 &#x7248;&#x672C;&#x5355;&#x72EC;&#x62BD;&#x51FA;&#x4E86; SystemServiceRegistry &#x6765;&#x505A;&#x7BA1;&#x7406;&#x56DB;&#x901A;&#x670D;&#x52A1;</p>
+<pre><code>    private static final HashMap&lt;String, ServiceFetcher&lt;?&gt;&gt; SYSTEM_SERVICE_FETCHERS =
+            new HashMap&lt;String, ServiceFetcher&lt;?&gt;&gt;();
+    public static Object getSystemService(ContextImpl ctx, String name) {
+        ServiceFetcher&lt;?&gt; fetcher = SYSTEM_SERVICE_FETCHERS.get(name);
+        return fetcher != null ? fetcher.getService(ctx) : null;
+    }
+</code></pre><p>SYSTEM_SERVICE_FETCHERS &#x662F; HashMap &#x7528;&#x4E8E;&#x505A;&#x7F13;&#x5B58;&#xFF0C;&#x6240;&#x4EE5;&#x5F97;&#x5230;&#x7684;&#x5C06;&#x662F;&#x4E2A;&#x5355;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>
+    static {
+        // &#x5728;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x5C06;&#x4F1A;&#x6CE8;&#x518C;&#x5F88;&#x591A;&#x7684;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;
+        ...
+
+        registerService(Context.LAYOUT_INFLATER_SERVICE, LayoutInflater.class,
+                new CachedServiceFetcher&lt;LayoutInflater&gt;() {
+            @Override
+            public LayoutInflater createService(ContextImpl ctx) {
+                return new PhoneLayoutInflater(ctx.getOuterContext());
+            }});
+
+        ...
+    }
+</code></pre><p>&#x5230;&#x8FD9;&#x91CC;&#x770B;&#x5230; LayoutInflater &#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F; PhoneLayoutInflater&#x3002;</p>
+<p>&#x5C0F;&#x7ED3;</p>
+<ul>
+<li>LayoutInflater &#x662F;&#x7531; context.getSystemService &#x83B7;&#x53D6;&#x7684;</li>
+<li>ActivityThread &#x4E2D;&#x5F00;&#x542F;&#x7684;&#x542F;&#x52A8;&#x6D41;&#x7A0B; main</li>
+<li>Activity &#x662F;&#x7531;&#x53CD;&#x5C04;&#x521B;&#x5EFA;&#x7684;</li>
+<li>Context &#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F; ContextImpl</li>
+<li>Context &#x7684; getSystemService &#x5C06;&#x8FD4;&#x56DE; &#x5355;&#x4F8B; &#x7684;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x5BF9;&#x8C61;</li>
+<li>LayoutInflater &#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F; PhoneLayoutInflater</li>
+</ul>
+<h3 id="layoutinflater-&#x7684;&#x89E3;&#x6790;&#x89C6;&#x56FE;&#x7684;&#x6D41;&#x7A0B;">LayoutInflater &#x7684;&#x89E3;&#x6790;&#x89C6;&#x56FE;&#x7684;&#x6D41;&#x7A0B;</h3>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="005 属性动画.html" class="navigation navigation-prev " aria-label="Previous page: 005 属性动画">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="007 博客计划.html" class="navigation navigation-next " aria-label="Next page: 007 博客计划">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"006 inflater 源码分析","level":"1.2.6","depth":2,"next":{"title":"007 博客计划","level":"1.2.7","depth":2,"path":"blog/007 博客计划.md","ref":"blog/007 博客计划.md","articles":[]},"previous":{"title":"005 属性动画","level":"1.2.5","depth":2,"path":"blog/005 属性动画.md","ref":"blog/005 属性动画.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blog/006 inflater 源码分析.md","mtime":"2018-05-25T06:42:02.974Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-04T09:03:19.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

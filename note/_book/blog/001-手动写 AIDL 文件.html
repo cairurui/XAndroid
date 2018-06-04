@@ -1,0 +1,707 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>001-手动写 AIDL 文件 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="002-自定义view.html" />
+    
+    
+    <link rel="prev" href="008 Android 原生学习介绍.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="008 Android 原生学习介绍.html">
+            
+                <a href="008 Android 原生学习介绍.html">
+            
+                    
+                    android 原生学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="001-手动写 AIDL 文件.html">
+            
+                <a href="001-手动写 AIDL 文件.html">
+            
+                    
+                    001-手动写 AIDL 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="002-自定义view.html">
+            
+                <a href="002-自定义view.html">
+            
+                    
+                    002-自定义view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="003 invalidate 的分析.html">
+            
+                <a href="003 invalidate 的分析.html">
+            
+                    
+                    003 invalidate 的分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="004 Android View 事件分发.html">
+            
+                <a href="004 Android View 事件分发.html">
+            
+                    
+                    004 Android View 事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="005 属性动画.html">
+            
+                <a href="005 属性动画.html">
+            
+                    
+                    005 属性动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="006 inflater 源码分析.html">
+            
+                <a href="006 inflater 源码分析.html">
+            
+                    
+                    006 inflater 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="007 博客计划.html">
+            
+                <a href="007 博客计划.html">
+            
+                    
+                    007 博客计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="008 Android 原生学习介绍.html">
+            
+                <a href="008 Android 原生学习介绍.html">
+            
+                    
+                    008 Android 原生学习介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="009 recyclerview源码及自定义layoutmanager.html">
+            
+                <a href="009 recyclerview源码及自定义layoutmanager.html">
+            
+                    
+                    009 recyclerview源码及自定义layoutmanager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="010 view_touch源码.html">
+            
+                <a href="010 view_touch源码.html">
+            
+                    
+                    010 view_touch源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >001-手动写 AIDL 文件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x624B;&#x52A8;&#x5199;-aidl-&#x8FC7;&#x7A0B;">&#x624B;&#x52A8;&#x5199; AIDL &#x8FC7;&#x7A0B;</h1>
+<h3 id="1-bean-&#x6587;&#x4EF6;">1. bean &#x6587;&#x4EF6;</h3>
+<p>aidl &#x4E2D;&#x53EF;&#x4F20;&#x9012;&#x7684;&#x7C7B;&#x578B;&#x6709;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;string&#xFF0C;list&#xFF0C;map &#x7B49;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684; bean &#x9700;&#x8981;&#x5B9E;&#x73B0; Parcelable &#x63A5;&#x53E3;</p>
+<pre><code>
+public class Book implements Parcelable {
+
+    private int price;
+    private String name;
+
+    public Book(int price, String name) {
+        this.price = price;
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(price);
+        dest.writeString(name);
+    }
+
+    // &#x9700;&#x8981;&#x6CE8;&#x610F;&#x987A;&#x5E8F;&#xFF0C;&#x8981;&#x4E0E; writeToParcel &#x4E00;&#x81F4;
+    protected Book(Parcel in) {
+        price = in.readInt();
+        name = in.readString();
+    }
+
+    public static final Creator&lt;Book&gt; CREATOR = new Creator&lt;Book&gt;() {
+        @Override
+        public Book createFromParcel(Parcel in) {
+            return new Book(in);
+        }
+
+        @Override
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
+
+    @Override
+    public String toString() {
+        return &quot;Book{&quot; +
+                &quot;price=&quot; + price +
+                &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +
+                &apos;}&apos;;
+    }
+}
+</code></pre><h3 id="2-stub-&#x7C7B;">2. stub &#x7C7B;</h3>
+<p>&#x8FD9;&#x4E2A;&#x7C7B;&#x8FD0;&#x884C;&#x65F6;&#x5DF2;&#x7ECF;&#x5728; server &#x7AEF;&#x4E86;&#xFF0C;&#x662F; &#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x8D1F;&#x8D23;&#x8C03;&#x5EA6;&#x529F;&#x80FD;&#x63A5;&#x53E3;&#x3002;</p>
+<pre><code>
+public abstract class Stub extends Binder implements BookManager {
+
+    public static final String DESCRIPTOR = &quot;com.xiaocai.messageclient.ipc.server.BookManager&quot;;
+    public static final int TRANSAVTION_getBooks = IBinder.FIRST_CALL_TRANSACTION;
+    public static final int TRANSAVTION_addBook = IBinder.FIRST_CALL_TRANSACTION + 1;
+
+    public Stub() {
+        attachInterface(this, DESCRIPTOR);
+    }
+
+    @Override
+    public IBinder asBinder() {
+        return this;
+    }
+
+    /**
+     * &#x7ED9; Client &#x65B9;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x7528;&#x6765;&#x8F6C;&#x6362;&#x4E3A;&#x9700;&#x8981;&#x7684; Server &#x5BF9;&#x8C61;&#xFF08;&#x5728;&#x540C;&#x4E00;&#x8FDB;&#x7A0B;&#x7684;&#x60C5;&#x51B5;&#xFF09;&#x6216;&#x8005;&#x662F;&#x5176;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF08;&#x8DE8;&#x8FDB;&#x7A0B;&#x65F6;&#xFF09;
+     *
+     * &#x5F53; Client &#x7AEF;&#x5728;&#x521B;&#x5EFA;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;&#xFF0C; &#x8C03;&#x7528; bindService &#x65F6;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; ServiceConnection &#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x5165;&#x53C2;&#x3002;
+     * &#x5728; ServiceConnection &#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5; onServiceConnected &#x4E2D; &#x4F1A;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A; asInterface(IBinder binder) &#x62FF;&#x5230; BookManager &#x5BF9;&#x8C61;&#xFF0C;
+     * &#x8FD9;&#x4E2A; IBinder &#x7C7B;&#x578B;&#x7684;&#x5165;&#x53C2; binder &#x662F;&#x9A71;&#x52A8;&#x4F20;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#xFF0C;&#x6B63;&#x5982;&#x4F60;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x4E00;&#x6837;&#xFF0C;
+     * &#x65B9;&#x6CD5;&#x4E2D;&#x4F1A;&#x53BB;&#x8C03;&#x7528; binder.queryLocalInterface() &#x53BB;&#x67E5;&#x627E; Binder &#x672C;&#x5730;&#x5BF9;&#x8C61;&#xFF0C;
+     * &#x5982;&#x679C;&#x627E;&#x5230;&#x4E86;&#x5C31;&#x8BF4;&#x660E; Client &#x548C; Server &#x5728;&#x540C;&#x4E00;&#x8FDB;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A; binder &#x672C;&#x8EAB;&#x5C31;&#x662F; Binder &#x672C;&#x5730;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;
+     * &#x5426;&#x5219;&#x8BF4;&#x660E;&#x662F; binder &#x662F;&#x4E2A;&#x8FDC;&#x7A0B;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; BinderProxy&#x3002;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61; Proxy&#xFF0C;
+     * &#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x6765;&#x662F;&#x5B9E;&#x73B0;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#x3002;
+     */
+    public static BookManager asInterface(IBinder binder) {
+        if (binder == null) {
+            return null;
+        }
+        IInterface iInterface = binder.queryLocalInterface(DESCRIPTOR);
+        if (iInterface != null &amp;&amp; iInterface instanceof BookManager) {
+            return (BookManager) iInterface;
+        }
+
+        return new Proxy(binder);
+
+    }
+
+
+    /**
+     * &#x4EE5; addBook &#x4E3A;&#x4F8B;&#xFF1A;
+     * Client &#x7AEF;&#x8C03;&#x7528; addBook --&gt; binder &#x4EE3;&#x7406;&#x8C03;&#x7528; addBook --&gt; &#x4E00;&#x7CFB;&#x5217;&#x4E2D;&#x95F4;&#x5C42;&#x8C03;&#x7528;&#x540E;&#xFF0C;&#x627E;&#x5230;&#x4E86; Server &#x7AEF;&#x5BF9;&#x5E94;&#x7684; Binder &#x5BF9;&#x8C61;
+     * --&gt; Binder &#x5BF9;&#x8C61;&#x7684; transact --&gt; &#x6765;&#x5230;&#x8FD9;&#x4E2A; Stub &#x6765;&#x7684; onTransact&#xFF0C;&#x5224;&#x65AD;&#x4E86;&#x662F; addBook &#x65B9;&#x6CD5; --&gt; &#x8C03;&#x7528;&#x5177;&#x4F53;&#x5B9E;&#x73B0; Server &#x7C7B;&#x7684; addBook
+     */
+    @Override
+    protected boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+        switch (code) {
+            case INTERFACE_TRANSACTION:
+                reply.writeString(DESCRIPTOR);
+                return true;
+            case TRANSAVTION_getBooks:
+                data.enforceInterface(DESCRIPTOR);
+                List&lt;Book&gt; books = this.getBooks();
+                reply.writeNoException();
+                reply.writeTypedList(books);
+                return true;
+            case TRANSAVTION_addBook:
+                data.enforceInterface(DESCRIPTOR);
+                Book book = null;
+                if (data.readInt() != 0) {
+                    book = Book.CREATOR.createFromParcel(data);
+                }
+                this.addBook(book);
+                reply.writeNoException();
+                return true;
+        }
+
+        return super.onTransact(code, data, reply, flags);
+    }
+}
+</code></pre><h3 id="3-&#x4EE3;&#x7406;&#x7C7B;-proxy">3. &#x4EE3;&#x7406;&#x7C7B; Proxy</h3>
+<p>&#x8FD9;&#x4E2A;&#x7C7B;&#x8FD0;&#x884C;&#x65F6;&#x8FD8;&#x662F;&#x5728; Client &#x7AEF;&#xFF0C;&#x8D1F;&#x8D23;&#x8DDF; Binder &#x8FDB;&#x884C;&#x5BF9;&#x63A5;&#xFF0C;&#x6389;&#x8D77; Binder&#x3002;</p>
+<pre><code>public class Proxy implements BookManager {
+
+    public static final String DESCRIPTOR = &quot;com.xiaocai.messageclient.ipc.server.BookManager&quot;;
+
+    IBinder mRemote;
+
+
+    public Proxy(IBinder binder) {
+        this.mRemote = binder;
+    }
+
+    public String getInterfaceDescriptor() {
+        return DESCRIPTOR;
+    }
+
+    @Override
+    public List&lt;Book&gt; getBooks() throws RemoteException {
+        Parcel data = Parcel.obtain();
+        Parcel replay = Parcel.obtain();
+        List&lt;Book&gt; result = null;
+        try {
+            data.writeInterfaceToken(DESCRIPTOR);
+            mRemote.transact(Stub.TRANSAVTION_getBooks, data, replay, 0);
+            replay.readException();
+            result = replay.createTypedArrayList(Book.CREATOR);
+        } finally {
+            data.recycle();
+            replay.recycle();
+        }
+        return result;
+    }
+
+    @Override
+    public void addBook(Book book) throws RemoteException {
+        Parcel data = Parcel.obtain();
+        Parcel replay = Parcel.obtain();
+        try {
+            data.writeInterfaceToken(DESCRIPTOR);
+            if (book != null) {
+                data.writeInt(1);
+                book.writeToParcel(data, 0);
+            } else {
+                data.writeInt(0);
+            }
+
+            mRemote.transact(Stub.TRANSAVTION_addBook, data, replay, 0);
+            replay.readException();
+        } finally {
+            data.recycle();
+            replay.recycle();
+        }
+    }
+
+    @Override
+    public IBinder asBinder() {
+        return mRemote;
+    }
+}
+</code></pre><h3 id="4-&#x670D;&#x52A1;&#x7AEF;&#x5177;&#x4F53;&#x5B9E;&#x73B0;-remoteservice">4. &#x670D;&#x52A1;&#x7AEF;&#x5177;&#x4F53;&#x5B9E;&#x73B0; RemoteService</h3>
+<p>&#x5728;&#x6E05;&#x5355;&#x6587;&#x4EF6;&#x4E2D;&#x9700;&#x8981; process&#xFF0C;&#x8BA9;&#x5176;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#x3002;&#x5728; onBind &#x4E2D;&#x8FD4;&#x56DE; Stub &#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>
+public class RemoteService extends Service {
+
+    private List&lt;Book&gt; mBooks = new ArrayList&lt;&gt;();
+
+    {
+        mBooks.add(new Book(100, &quot;&#x6DF1;&#x5165;&#x7406;&#x89E3; java&quot;));
+        mBooks.add(new Book(200, &quot;&#x6DF1;&#x5165;&#x7406;&#x89E3; android&quot;));
+        mBooks.add(new Book(300, &quot;&#x6DF1;&#x5165;&#x7406;&#x89E3; JavaScript&quot;));
+    }
+
+    public RemoteService() {
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return stub;
+    }
+
+    private final Stub stub = new Stub() {
+        @Override
+        public List&lt;Book&gt; getBooks() throws RemoteException {
+            synchronized (this) {
+                if (mBooks != null)
+                    return mBooks;
+                return new ArrayList&lt;Book&gt;();
+            }
+        }
+
+        @Override
+        public void addBook(Book book) throws RemoteException {
+            synchronized (this) {
+                if (book == null) return;
+
+                if (mBooks == null) {
+                    mBooks = new ArrayList&lt;&gt;();
+                }
+                mBooks.add(book);
+            }
+        }
+    };
+}
+</code></pre><h3 id="5-&#x5BA2;&#x6237;&#x7AEF;-clientactivity">5. &#x5BA2;&#x6237;&#x7AEF; ClientActivity</h3>
+<p>&#x6B63;&#x5E38;&#x7684; bind &#x65B9;&#x5F0F;&#x4F7F;&#x7528;&#x5373;&#x53EF;</p>
+<pre><code>
+public class ClientActivity extends AppCompatActivity {
+    BookManager mBookManager;
+    TextView tv_content;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_client);
+        tv_content = findViewById(R.id.tv_content);
+    }
+
+    public void startBookManager(View view) {
+
+        Intent intent = new Intent(this, RemoteService.class);
+        bindService(intent, conn, Context.BIND_AUTO_CREATE);
+    }
+
+    ServiceConnection conn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mBookManager = Stub.asInterface(service);
+            Toast.makeText(ClientActivity.this,&quot;&#x8FDE;&#x63A5;&#x4E0A;&#x4E86;&quot;,Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mBookManager = null;
+            Toast.makeText(ClientActivity.this,&quot;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&quot;,Toast.LENGTH_SHORT).show();
+        }
+    };
+
+
+    public void addBook(View view) {
+        Random random = new Random();
+        int price = random.nextInt(100);
+        String name = &quot;name of price &quot; + price;
+        Book book = new Book(price, name);
+        try {
+            mBookManager.addBook(book);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void getBooks(View view) {
+        synchronized (this) {
+            try {
+                List&lt;Book&gt; books = mBookManager.getBooks();
+                if (books == null) return;
+
+                StringBuilder sb = new StringBuilder();
+                for (Book book : books) {
+                    if (book != null)
+                        sb.append(book.toString() + &quot;\r\n&quot;);
+                }
+
+                showContent(sb.toString());
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    private void showContent(String content) {
+        tv_content.setText(content);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mBookManager != null) {
+            unbindService(conn);
+        }
+    }
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="008 Android 原生学习介绍.html" class="navigation navigation-prev " aria-label="Previous page: android 原生学习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="002-自定义view.html" class="navigation navigation-next " aria-label="Next page: 002-自定义view">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"001-手动写 AIDL 文件","level":"1.2.1","depth":2,"next":{"title":"002-自定义view","level":"1.2.2","depth":2,"path":"blog/002-自定义view.md","ref":"blog/002-自定义view.md","articles":[]},"previous":{"title":"android 原生学习","level":"1.2","depth":1,"path":"blog/008 Android 原生学习介绍.md","ref":"blog/008 Android 原生学习介绍.md","articles":[{"title":"001-手动写 AIDL 文件","level":"1.2.1","depth":2,"path":"blog/001-手动写 AIDL 文件.md","ref":"blog/001-手动写 AIDL 文件.md","articles":[]},{"title":"002-自定义view","level":"1.2.2","depth":2,"path":"blog/002-自定义view.md","ref":"blog/002-自定义view.md","articles":[]},{"title":"003 invalidate 的分析","level":"1.2.3","depth":2,"path":"blog/003 invalidate 的分析.md","ref":"blog/003 invalidate 的分析.md","articles":[]},{"title":"004 Android View 事件分发","level":"1.2.4","depth":2,"path":"blog/004 Android View 事件分发.md","ref":"blog/004 Android View 事件分发.md","articles":[]},{"title":"005 属性动画","level":"1.2.5","depth":2,"path":"blog/005 属性动画.md","ref":"blog/005 属性动画.md","articles":[]},{"title":"006 inflater 源码分析","level":"1.2.6","depth":2,"path":"blog/006 inflater 源码分析.md","ref":"blog/006 inflater 源码分析.md","articles":[]},{"title":"007 博客计划","level":"1.2.7","depth":2,"path":"blog/007 博客计划.md","ref":"blog/007 博客计划.md","articles":[]},{"title":"008 Android 原生学习介绍","level":"1.2.8","depth":2,"path":"blog/008 Android 原生学习介绍.md","ref":"blog/008 Android 原生学习介绍.md","articles":[]},{"title":"009 recyclerview源码及自定义layoutmanager","level":"1.2.9","depth":2,"path":"blog/009 recyclerview源码及自定义layoutmanager.md","ref":"blog/009 recyclerview源码及自定义layoutmanager.md","articles":[]},{"title":"010 view_touch源码","level":"1.2.10","depth":2,"path":"blog/010 view_touch源码.md","ref":"blog/010 view_touch源码.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blog/001-手动写 AIDL 文件.md","mtime":"2018-04-17T06:27:22.279Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-04T09:03:19.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
