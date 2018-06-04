@@ -1,0 +1,1 @@
+* [跳转到笔记](note/blog/README.md)
