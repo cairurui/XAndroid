@@ -1,6 +1,3 @@
-* [跳转到笔记](note/blog/README.md)
-
-
 * [简介](README.md)
 * [android 原生学习](note/blog/008 Android 原生学习介绍.md)
     * [001-手动写 AIDL 文件](note/blog/001-手动写 AIDL 文件.md)
