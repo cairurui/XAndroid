@@ -16,8 +16,8 @@ import com.charry.xandroid.MainActivity;
 import com.charry.xandroid.R;
 
 public class AnimDemoActivity extends AppCompatActivity {
-    Button btn_start;
-    Button btn_target;
+    private Button btn_start;
+    private Button btn_target;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

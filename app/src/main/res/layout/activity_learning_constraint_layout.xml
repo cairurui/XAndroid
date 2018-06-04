@@ -15,7 +15,8 @@
         android:background="#fd3"
         android:gravity="center"
         android:text="Banner"
-        tools:layout_editor_absoluteX="137dp" />
+        tools:layout_editor_absoluteX="137dp"
+        tools:ignore="MissingConstraints" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline_h"

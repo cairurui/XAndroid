@@ -26,8 +26,7 @@ public class X2_Fragment extends BaseFragment {
     }
 
     public static X2_Fragment newInstance() {
-        X2_Fragment mineFragment = new X2_Fragment();
-        return mineFragment;
+        return new X2_Fragment();
     }
 
     @Override

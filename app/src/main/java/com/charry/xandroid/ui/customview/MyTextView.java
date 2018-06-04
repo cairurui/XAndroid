@@ -81,15 +81,6 @@ public class MyTextView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLUE); // 绘制背景颜色
-        /**
-         * Draw the text, with origin at (x,y), using the specified paint. The origin is interpreted
-         * based on the Align setting in the paint.
-         *
-         * @param text The text to be drawn
-         * @param x The x-coordinate of the origin of the text being drawn
-         * @param y The y-coordinate of the baseline of the text being drawn
-         * @param paint The paint used for the text (e.g. color, size, style)
-         */
 
         Rect bounds = new Rect();
         mPaint.getTextBounds(text, 0, text.length() - 1, bounds);

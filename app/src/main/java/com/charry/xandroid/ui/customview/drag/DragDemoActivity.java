@@ -30,7 +30,7 @@ public class DragDemoActivity extends AppCompatActivity {
 
         mListView = (ListView) findViewById(R.id.list_view);
 
-        mItems = new ArrayList<String>();
+        mItems = new ArrayList<>();
 
         for (int i = 0; i < 200; i++) {
             mItems.add("i -> " + i);

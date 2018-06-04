@@ -318,6 +318,7 @@ public class ProgressConstraintLayout extends ConstraintLayout implements Progre
     }
 
     private void restoreDefaultBackground() {
+        //noinspection deprecation
         this.setBackgroundDrawable(defaultBackground);
     }
 

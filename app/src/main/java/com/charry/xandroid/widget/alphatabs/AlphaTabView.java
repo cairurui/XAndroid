@@ -79,7 +79,7 @@ public class AlphaTabView extends View {
         if (null != mIconNormal) {
             mIconSelected = null == mIconSelected ? mIconNormal : mIconSelected;
         } else {
-            mIconNormal = null == mIconSelected ? mIconNormal : mIconSelected;
+            mIconNormal = null == mIconSelected ? null : mIconSelected;
         }
 
         mText = a.getString(R.styleable.AlphaTabView_tabText);

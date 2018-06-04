@@ -21,8 +21,7 @@ public class FindFragment extends BaseFragment {
     }
 
     public static FindFragment newInstance() {
-        FindFragment mineFragment = new FindFragment();
-        return mineFragment;
+        return new FindFragment();
     }
 
     @Override

@@ -7,37 +7,37 @@ import java.util.List;
 
 public interface ProgressLayout {
 
-    public void showContent();
+    void showContent();
 
-    public void showContent(List<Integer> idsOfViewsNotToShow);
+    void showContent(List<Integer> idsOfViewsNotToShow);
 
-    public void showLoading();
+    void showLoading();
 
-    public void showLoading(List<Integer> idsOfViewsNotToHide);
+    void showLoading(List<Integer> idsOfViewsNotToHide);
 
-    public void showEmpty(int icon, String title, String description);
+    void showEmpty(int icon, String title, String description);
 
-    public void showEmpty(Drawable icon, String title, String description);
+    void showEmpty(Drawable icon, String title, String description);
 
-    public void showEmpty(int icon, String title, String description, List<Integer> idsOfViewsNotToHide);
+    void showEmpty(int icon, String title, String description, List<Integer> idsOfViewsNotToHide);
 
-    public void showEmpty(Drawable icon, String title, String description, List<Integer> idsOfViewsNotToHide);
+    void showEmpty(Drawable icon, String title, String description, List<Integer> idsOfViewsNotToHide);
 
-    public void showError(int icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener);
+    void showError(int icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener);
 
-    public void showError(Drawable icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener);
+    void showError(Drawable icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener);
 
-    public void showError(int icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener, List<Integer> idsOfViewsNotToHide);
+    void showError(int icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener, List<Integer> idsOfViewsNotToHide);
 
-    public void showError(Drawable icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener, List<Integer> idsOfViewsNotToHide);
+    void showError(Drawable icon, String title, String description, String buttonText, View.OnClickListener buttonClickListener, List<Integer> idsOfViewsNotToHide);
 
-    public String getCurrentState();
+    String getCurrentState();
 
-    public boolean isContentCurrentState();
+    boolean isContentCurrentState();
 
-    public boolean isLoadingCurrentState();
+    boolean isLoadingCurrentState();
 
-    public boolean isEmptyCurrentState();
+    boolean isEmptyCurrentState();
 
-    public boolean isErrorCurrentState();
+    boolean isErrorCurrentState();
 }

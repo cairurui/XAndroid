@@ -34,7 +34,7 @@ public class RemoteService extends Service {
             synchronized (this) {
                 if (mBooks != null)
                     return mBooks;
-                return new ArrayList<Book>();
+                return new ArrayList<>();
             }
         }
 

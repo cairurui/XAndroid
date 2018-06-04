@@ -13,5 +13,6 @@
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="106dp" />
+        tools:layout_editor_absoluteY="106dp"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

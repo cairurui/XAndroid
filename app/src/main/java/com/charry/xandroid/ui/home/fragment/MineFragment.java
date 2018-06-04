@@ -21,8 +21,7 @@ public class MineFragment extends BaseFragment {
     }
 
     public static MineFragment newInstance() {
-        MineFragment mineFragment = new MineFragment();
-        return mineFragment;
+        return new MineFragment();
     }
 
     @Override

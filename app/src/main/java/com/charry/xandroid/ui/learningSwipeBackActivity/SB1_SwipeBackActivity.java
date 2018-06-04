@@ -42,10 +42,9 @@ public class SB1_SwipeBackActivity extends BaseActivity {
     }
 
     private void setContentText() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("当前");
-        sb.append(canSwipeBack ? "可以侧滑退出" : "不可以侧滑退出");
-        tv_swipe_back.setText(sb.toString());
+        String sb = "当前" +
+                (canSwipeBack ? "可以侧滑退出" : "不可以侧滑退出");
+        tv_swipe_back.setText(sb);
     }
 
 

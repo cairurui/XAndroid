@@ -41,8 +41,7 @@ public class StatusBarUtil {
 
     public static int getStatusBarHeight(Activity activity) {
         int identifier = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        int statusBarHeight = activity.getResources().getDimensionPixelOffset(identifier);
-        return statusBarHeight;
+        return activity.getResources().getDimensionPixelOffset(identifier);
     }
 
 

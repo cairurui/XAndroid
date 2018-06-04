@@ -75,7 +75,7 @@ public class ClientActivity extends AppCompatActivity {
                 StringBuilder sb = new StringBuilder();
                 for (Book book : books) {
                     if (book != null)
-                        sb.append(book.toString() + "\r\n");
+                        sb.append(book.toString()).append("\r\n");
                 }
 
                 showContent(sb.toString());
