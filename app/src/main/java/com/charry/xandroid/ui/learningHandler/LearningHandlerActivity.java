@@ -77,5 +77,7 @@ public class LearningHandlerActivity extends AppCompatActivity {
             }
         });
         Looper.loop();
+
+//        handler.sendMessage()
     }
 }
