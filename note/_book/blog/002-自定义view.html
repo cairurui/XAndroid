@@ -1,0 +1,570 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>002-自定义view · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="003 invalidate 的分析.html" />
+    
+    
+    <link rel="prev" href="001-手动写 AIDL 文件.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="008 Android 原生学习介绍.html">
+            
+                <a href="008 Android 原生学习介绍.html">
+            
+                    
+                    android 原生学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="001-手动写 AIDL 文件.html">
+            
+                <a href="001-手动写 AIDL 文件.html">
+            
+                    
+                    001-手动写 AIDL 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="002-自定义view.html">
+            
+                <a href="002-自定义view.html">
+            
+                    
+                    002-自定义view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="003 invalidate 的分析.html">
+            
+                <a href="003 invalidate 的分析.html">
+            
+                    
+                    003 invalidate 的分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="004 Android View 事件分发.html">
+            
+                <a href="004 Android View 事件分发.html">
+            
+                    
+                    004 Android View 事件分发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="005 属性动画.html">
+            
+                <a href="005 属性动画.html">
+            
+                    
+                    005 属性动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="006 inflater 源码分析.html">
+            
+                <a href="006 inflater 源码分析.html">
+            
+                    
+                    006 inflater 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="007 博客计划.html">
+            
+                <a href="007 博客计划.html">
+            
+                    
+                    007 博客计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="008 Android 原生学习介绍.html">
+            
+                <a href="008 Android 原生学习介绍.html">
+            
+                    
+                    008 Android 原生学习介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="009 recyclerview源码及自定义layoutmanager.html">
+            
+                <a href="009 recyclerview源码及自定义layoutmanager.html">
+            
+                    
+                    009 recyclerview源码及自定义layoutmanager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="010 view_touch源码.html">
+            
+                <a href="010 view_touch源码.html">
+            
+                    
+                    010 view_touch源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >002-自定义view</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6F14;&#x793A;">&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6F14;&#x793A;</h2>
+<p>&#x7EE7;&#x627F; view &#x5E76;&#x7ED8;&#x5236;&#x6587;&#x5B57;&#x53CA;&#x989C;&#x8272;</p>
+<pre><code>public class MyTextView extends View {
+
+    Paint mPaint;
+    String text;
+
+    public MyTextView(Context context) {
+        this(context, null);
+    }
+
+    public MyTextView(Context context, @Nullable AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public MyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+
+        init(attrs);
+    }
+
+    private void init(AttributeSet attrs) {
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+//        mPaint.setColor(Color.RED);
+        mPaint.setTextSize(100);
+//        text = &quot;&#x8FD9;&#x662F;&#x6587;&#x672C;&#x4FE1;&#x606F;&quot;;
+
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MyTextView);
+        text = a.getString(R.styleable.MyTextView_text);
+        int color = a.getColor(R.styleable.MyTextView_textColor, Color.BLACK);
+        mPaint.setColor(color);
+        a.recycle();
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+
+        Xlog.d(&quot;widthSize:&quot; + widthSize + &quot;  widthMode:&quot; + getFriendlyModeName(widthMode)); //widthSize:1080  widthMode:AT_MOST
+        Xlog.d(&quot;heightSize:&quot; + heightSize + &quot;  heightMode:&quot; + getFriendlyModeName(heightMode));//heightSize:1704  heightMode:AT_MOST
+    }
+
+    private String getFriendlyModeName(int mode) {
+        switch (mode) {
+            case MeasureSpec.EXACTLY:
+                return &quot;EXACTLY&quot;;
+            case MeasureSpec.AT_MOST:
+                return &quot;AT_MOST&quot;;
+            case MeasureSpec.UNSPECIFIED:
+                return &quot;UNSPECIFIED&quot;;
+        }
+        return &quot;UNKOWN&quot;;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawColor(Color.BLUE); // &#x7ED8;&#x5236;&#x80CC;&#x666F;&#x989C;&#x8272;
+        /**
+         * Draw the text, with origin at (x,y), using the specified paint. The origin is interpreted
+         * based on the Align setting in the paint.
+         *
+         * @param text The text to be drawn
+         * @param x The x-coordinate of the origin of the text being drawn
+         * @param y The y-coordinate of the baseline of the text being drawn
+         * @param paint The paint used for the text (e.g. color, size, style)
+         */
+
+        Rect bounds = new Rect();
+        mPaint.getTextBounds(text, 0, text.length() - 1, bounds);
+        canvas.drawText(text, 0, 0 + bounds.height(), mPaint);
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d(&quot;xiaocai&quot;, &quot;ACTION_DOWN DOWN DOWN DOWN   ==== &quot;);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(&quot;xiaocai&quot;, &quot;ACTION_MOVE MOVE MOVE MOVE MOVE MOVE &quot;);
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(&quot;xiaocai&quot;, &quot;ACTION_UP UP UP UP UP UP &quot;);
+                break;
+        }
+        return true; // &#x9700;&#x8981;&#x8FD4;&#x56DE; true &#x624D;&#x80FD;&#x63A5;&#x53D7;&#x5230;&#x540E;&#x9762;&#x7684;&#x4E8B;&#x4EF6;,&#x8981;&#x4E0D;&#x7136;&#x53EA;&#x80FD;&#x6536;&#x5230; ACTION_DOWN &#x7684;&#x4E8B;&#x4EF6;
+//        return super.onTouchEvent(event);
+    }
+}
+
+// &#x5728; attrs.xml &#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;
+&lt;declare-styleable name=&quot;MyTextView&quot;&gt;
+    &lt;attr name=&quot;text&quot; format=&quot;string&quot;/&gt;
+    &lt;attr name=&quot;textColor&quot; format=&quot;color&quot;/&gt;
+&lt;/declare-styleable&gt;
+
+// &#x5728;&#x5E03;&#x5C40;&#x4E2D;&#x4F7F;&#x7528;
+&lt;com.charry.xandroid.ui.customview.MyTextView
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_marginTop=&quot;20dp&quot;
+    app:text=&quot;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&quot;
+    app:textColor=&quot;@android:color/white&quot;
+    android:layout_height=&quot;wrap_content&quot; /&gt;
+</code></pre><p><img src="img/mytextview.png" alt=""></p>
+<h2 id="&#x4E00;&#x4E9B;&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;view&#x7684;&#x95EE;&#x9898;">&#x4E00;&#x4E9B;&#x5173;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;view&#x7684;&#x95EE;&#x9898;</h2>
+<h3 id="1-&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65F6;&#x673A;">1. &#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65F6;&#x673A;</h3>
+<ul>
+<li>1: &#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x662F;&#x4EE3;&#x7801;&#x4E2D; new &#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;</li>
+<li>2: &#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x662F;xml&#x5E03;&#x5C40;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#xFF0C;&#x5E76;&#x52A0;&#x8F7D;&#x4E86;&#x8BE5;&#x5E03;&#x5C40;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;</li>
+<li>3: &#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x662F;xml&#x5E03;&#x5C40;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x5E76;&#x4E14;&#x52A0;&#x4E86; style &#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x52A0;&#x8F7D;&#x8BE5;&#x5E03;&#x5C40;&#x65F6;&#x8C03;&#x7528;</li>
+</ul>
+<h3 id="2-&#x4ECB;&#x7ECD;&#x4E0B;&#x81EA;&#x5B9A;&#x4E49;-view-">2. &#x4ECB;&#x7ECD;&#x4E0B;&#x81EA;&#x5B9A;&#x4E49; view ?</h3>
+<pre><code> &#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;,onMeasure/onLayout/onDraw.&#x5206;&#x522B;&#x5BF9;&#x5E94; &#x6D4B;&#x91CF;,&#x5E03;&#x5C40;&#x548C;&#x7ED8;&#x5236;.
+</code></pre><h3 id="3-measurespec-&#x6709;&#x54EA;&#x51E0;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x6709;&#x54EA;&#x4E9B;&#x5BF9;&#x5E94;&#xFF1F;">3. MeasureSpec &#x6709;&#x54EA;&#x51E0;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x6709;&#x54EA;&#x4E9B;&#x5BF9;&#x5E94;&#xFF1F;</h3>
+<ul>
+<li>1: EXACTLY:&#x7ED9;&#x5B9A;&#x4E86;&#x5177;&#x4F53;&#x7684;&#x6570;&#x503C;&#x6216; match_parent </li>
+<li>2: AT_MOST&#xFF1A;&#x7ED9;&#x7684;&#x662F; wrap_content</li>
+<li>3: UNSPECIFIED&#xFF1A;&#x5F88;&#x5C11;&#x7528;&#xFF0C;&#x5728; scrollview &#x5D4C;&#x5957; Listview &#x65F6;&#x4F1A;&#x51FA;&#x73B0;</li>
+</ul>
+<h3 id="4-scrollview-&#x5D4C;&#x5957;-listview-&#x53EA;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x9AD8;&#x5EA6;&#x7684;&#x95EE;&#x9898;">4. ScrollView &#x5D4C;&#x5957; ListView &#x53EA;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6761;&#x76EE;&#x9AD8;&#x5EA6;&#x7684;&#x95EE;&#x9898;</h3>
+<p>&#x5148;&#x5206;&#x6790;&#x539F;&#x56E0;&#xFF1A;</p>
+<pre><code>    ListView &#x7684; onMeasure &#x4E2D;&#x7ED9;&#x7684;&#x9AD8;&#x5EA6;&#x5C31;&#x662F; &#x4E00;&#x4E2A;&#x6761;&#x76EE; + padding &#x7684;&#x503C;&#xFF1A;
+// ListView &#x7684; onMeasure &#x4E2D;
+if (heightMode == MeasureSpec.UNSPECIFIED) {
+    heightSize = mListPadding.top + mListPadding.bottom + childHeight + getVerticalFadingEdgeLength() * 2;
+}
+if (heightMode == MeasureSpec.AT_MOST) {
+    heightSize = measureHeightOfChildren(widthMeasureSpec, 0, NO_POSITION, heightSize, -1);
+}
+</code></pre><pre><code>&#x7ED9;&#x7684;&#x6D4B;&#x91CF;&#x6A21;&#x5F0F; UNSPECIFIED &#x5BFC;&#x81F4;&#x7684;&#x8FD9;&#x4E2A;&#x6D4B;&#x91CF;&#x6A21;&#x5F0F;&#x662F; ScrollView &#x7ED9;&#x7684;&#xFF0C;&#x53BB; ScrollView &#x7684; onMeasure &#x4E2D;&#x770B;&#x4E0B;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x53EF;&#x7591;&#x7684;&#x3002;
+&#x56E0;&#x4E3A; ScrollView &#x7EE7;&#x627F; FrameLayout&#xFF0C;&#x6240;&#x4EE5;&#x53BB;&#x770B;&#x4E0B; FrameLayout &#x4E2D;&#x7684; onMeasure &#x770B;&#x770B;&#x4E0B;&#xFF1A;
+</code></pre><pre><code>    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int count = getChildCount();
+        ...
+        for (int i = 0; i &lt; count; i++) {
+            final View child = getChildAt(i);
+            if (mMeasureAllChildren || child.getVisibility() != GONE) {
+                // &#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86; &#x6D4B;&#x91CF;&#x65B9;&#x6CD5;  measureChildWithMargins
+                measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
+                final LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                maxWidth = Math.max(maxWidth,
+                        child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin);
+                maxHeight = Math.max(maxHeight,
+                        child.getMeasuredHeight() + lp.topMargin + lp.bottomMargin);
+                childState = combineMeasuredStates(childState, child.getMeasuredState());
+                if (measureMatchParentChildren) {
+                    if (lp.width == LayoutParams.MATCH_PARENT ||
+                            lp.height == LayoutParams.MATCH_PARENT) {
+                        mMatchParentChildren.add(child);
+                    }
+                }
+            }
+        }
+        ...
+    }
+    // ScrollView &#x91CD;&#x5199;&#x4E86;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C; ScrollView &#x4E2D;&#x7684;&#x505A;&#x6CD5;&#xFF1A;
+    @Override
+    protected void measureChildWithMargins(View child, int parentWidthMeasureSpec, int widthUsed,
+            int parentHeightMeasureSpec, int heightUsed) {
+        final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
+        final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
+                mPaddingLeft + mPaddingRight + lp.leftMargin + lp.rightMargin
+                        + widthUsed, lp.width);
+        final int usedTotal = mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin +
+                heightUsed;
+        // &#x8FD9;&#x91CC;&#x7ED9;&#x4E86;&#x6D4B;&#x91CF;&#x6A21;&#x5F0F;&#x4E3A;&#xFF1A;UNSPECIFIED
+        final int childHeightMeasureSpec = MeasureSpec.makeSafeMeasureSpec(
+                Math.max(0, MeasureSpec.getSize(parentHeightMeasureSpec) - usedTotal),
+                MeasureSpec.UNSPECIFIED);
+        child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+    }
+</code></pre><p>&#x603B;&#x7ED3;&#x4E0B;&#x6E90;&#x7801;&#x8DDF;&#x8E2A;&#xFF1A;
+    ScrollView&#x7684;onMeasure&#x53D1;&#x73B0;&#x6CA1;&#x4EC0;&#x4E48;&#xFF0C;&#x4E8E;&#x662F;&#x770B;&#x4E0B;&#x7236;&#x7C7B;&#x505A;&#x4E86;&#x4EC0;&#x4E48; --&gt; FrameLayout&#x7684;onMeasure &#x4F1A;&#x8C03;&#x7528;measureChildWithMargins --&gt; &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;ScrollView&#x91CD;&#x5199;&#x4E86; --&gt; ScrollView&#x7684;measureChildWithMargins&#x4E2D;&#x53D1;&#x73B0;&#x7ED9;&#x9AD8;&#x5EA6;&#x8BBE;&#x7F6E;&#x4E86;UNSPECIFIED</p>
+<p>&#x95EE;&#x9898;&#x7684;&#x6839;&#x6E90;&#x662F; &#x7236;&#x7C7B;&#x7ED9;&#x4E86;UNSPECIFIED&#x6D4B;&#x91CF;&#x6A21;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x8BE5;&#x6389;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x4E3A; AT_MOST &#x5C31;&#x80FD;&#x89E3;&#x51B3;&#x95EE;&#x9898;
+&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;</p>
+<pre><code>@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
+    int heightSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2, MeasureSpec.AT_MOST);
+    super.onMeasure(widthMeasureSpec, heightSpec);
+ }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="001-手动写 AIDL 文件.html" class="navigation navigation-prev " aria-label="Previous page: 001-手动写 AIDL 文件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="003 invalidate 的分析.html" class="navigation navigation-next " aria-label="Next page: 003 invalidate 的分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"002-自定义view","level":"1.2.2","depth":2,"next":{"title":"003 invalidate 的分析","level":"1.2.3","depth":2,"path":"blog/003 invalidate 的分析.md","ref":"blog/003 invalidate 的分析.md","articles":[]},"previous":{"title":"001-手动写 AIDL 文件","level":"1.2.1","depth":2,"path":"blog/001-手动写 AIDL 文件.md","ref":"blog/001-手动写 AIDL 文件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"blog/002-自定义view.md","mtime":"2018-04-20T03:01:14.344Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-05T10:22:53.073Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
