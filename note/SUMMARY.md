@@ -12,4 +12,5 @@
     * [008 Android 原生学习介绍](blog/008 Android 原生学习介绍.md)
     * [009 recyclerview源码及自定义layoutmanager](blog/009 recyclerview源码及自定义layoutmanager.md)
     * [010 view_touch源码](blog/010 view_touch源码.md)
+    * [011 andfix 学习](blog/011 andfix 学习.md)
 
