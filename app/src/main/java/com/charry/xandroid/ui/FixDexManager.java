@@ -141,15 +141,16 @@ public class FixDexManager {
     private Object getDexElementsByClassLoader(ClassLoader classLoader) throws Exception {
 
         // 1.先获取 pathList
+        // BaseDexClassLoader 中的 private final DexPathList pathList;
         Field pathListField = BaseDexClassLoader.class.getDeclaredField("pathList");
         // IOC 熟悉反射
         pathListField.setAccessible(true);
         Object pathList = pathListField.get(classLoader);
 
         // 2. pathList里面的dexElements
+        // DexPathList 中的 private final Element[] dexElements;
         Field dexElementsField = pathList.getClass().getDeclaredField("dexElements");
         dexElementsField.setAccessible(true);
-
         return dexElementsField.get(pathList);
     }
 
