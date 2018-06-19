@@ -1,18 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.charry.myskin.MainActivity">
 
-    <TextView
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:onClick="startAnim" />
+
+    <com.charry.myskin.OutletLoadingView
+        android:id="@+id/outlet_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary" />
+
+    <com.charry.myskin.TimePickerView
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="gone">
 
-</android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.charry.myskin.NumberPicker
+                android:id="@+id/picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:np_dividerColor="@android:color/white"
+                app:np_dividerDistance="36dp"
+                app:np_dividerThickness="1dp"
+                app:np_fadingEdgeEnabled="true"
+                app:np_formatter="%02d"
+                app:np_max="24"
+                app:np_min="0"
+                app:np_selectedTextColor="@android:color/white"
+                app:np_selectedTextSize="20sp"
+                app:np_textColor="@android:color/white"
+                app:np_textSize="16sp"
+                app:np_wheelItemCount="5" />
+
+            <com.charry.myskin.NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:np_dividerColor="@android:color/white"
+                app:np_dividerDistance="36dp"
+                app:np_dividerThickness="1dp"
+                app:np_fadingEdgeEnabled="true"
+                app:np_formatter="%02d"
+                app:np_max="59"
+                app:np_min="0"
+                app:np_selectedTextColor="@android:color/white"
+                app:np_selectedTextSize="20sp"
+                app:np_textColor="@android:color/white"
+                app:np_textSize="16sp"
+                app:np_wheelItemCount="5" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <com.charry.myskin.RightMarkView
+        android:background="@color/colorPrimary"
+        android:id="@+id/right_mark_rmv"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+
+    <Button
+        android:id="@+id/bt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始" />
+
+</LinearLayout>

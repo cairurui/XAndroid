@@ -2,6 +2,7 @@ package com.xiaocai.messageclient;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private void onButtonClick() {
         Toast.makeText(this, "点击了按钮", Toast.LENGTH_SHORT).show();
 
-        int i = 2 / 1;
+        int i = 2 / 0;
     }
 
 
