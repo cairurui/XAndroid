@@ -1,4 +1,4 @@
-package com.charry.xandroid.ui;
+package com.charry.myskin;
 
 import android.content.Context;
 import android.util.Log;
