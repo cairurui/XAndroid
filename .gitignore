@@ -58,4 +58,4 @@ freeline/
 freeline_project_description.json
 
 # gitbook 自动生成的文件
-# node/_book
+node/_book

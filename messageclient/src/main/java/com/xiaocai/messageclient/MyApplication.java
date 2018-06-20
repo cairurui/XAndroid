@@ -26,7 +26,7 @@ public class MyApplication extends Application {
         super.onCreate();
         // initialize
         mPatchManager = new PatchManager(this);
-        mPatchManager.init("1.0");
+        mPatchManager.init(Utils.getVersionName(this));
         Log.d(TAG, "inited.");
 
         // load patch
