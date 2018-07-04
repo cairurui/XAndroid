@@ -20,7 +20,7 @@
         <activity android:name=".ui.learningmvp.TestActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.Splash"></activity>
+            android:theme="@style/AppTheme.Splash" />
         <activity android:name=".ui.Learningfragment.LearningFragmentActivity" />
         <activity android:name=".ui.learningmvp.LearningMVPActivity" />
         <activity android:name=".ui.useprogresslayout.UseProgressLayoutActivity" />
@@ -62,7 +62,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.fixbug.FixBugRealActivity"></activity>
+        <activity android:name=".ui.fixbug.FixBugRealActivity" />
+        <activity android:name=".ui.learningRxjava.LearningRxjavaActivity"></activity>
     </application>
 
 </manifest>

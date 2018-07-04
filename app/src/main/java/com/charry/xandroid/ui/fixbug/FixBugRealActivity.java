@@ -17,7 +17,7 @@ public class FixBugRealActivity extends AppCompatActivity {
 
     public void click(View view) {
 
-        Toast.makeText(this,"存在bug",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"修复了bug",Toast.LENGTH_SHORT).show();
 
 
     }
