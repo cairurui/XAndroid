@@ -9,6 +9,7 @@ import android.util.Log;
 import com.alipay.euler.andfix.patch.PatchManager;
 import com.facebook.stetho.Stetho;
 import com.charry.xandroid.utils.Xlog;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +32,12 @@ public class MyApplication extends Application implements Application.ActivityLi
         mApplication = this;
 
         Stetho.initializeWithDefaults(this);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
 
         registerActivityLifecycleCallbacks(this);
 

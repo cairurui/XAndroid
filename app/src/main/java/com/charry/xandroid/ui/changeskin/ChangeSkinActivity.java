@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.charry.xandroid.R;
+import com.charry.xandroid.utils.StatusBarUtil;
 import com.charry.xandroid.utils.Xlog;
 
 import java.io.File;
@@ -24,6 +25,8 @@ public class ChangeSkinActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_skin);
+
+        StatusBarUtil.setActivityTranslucent(this);
         iv = findViewById(R.id.iv);
 
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {

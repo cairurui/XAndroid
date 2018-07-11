@@ -1,1 +1,1 @@
-include ':app', ':messageclient', ':myskin'
+include ':app', ':messageclient', ':myskin', ':designpattern'

@@ -13,6 +13,7 @@
     * [009 recyclerview源码及自定义layoutmanager](blog/009 recyclerview源码及自定义layoutmanager.md)
     * [010 view_touch源码](blog/010 view_touch源码.md)
     * [011 andfix 学习](blog/011 andfix 学习.md)
+    * [012 状态栏设置颜色](blog/012 状态栏设置颜色.md)
 
 -----
 * [android 开发者中的设计模式](DesignPattern/00_android 开发者中的设计模式.md)
